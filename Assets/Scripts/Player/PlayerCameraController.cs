@@ -5,11 +5,13 @@ using UnityEngine;
 public class PlayerCameraController : MonoBehaviour
 {
     private Rigidbody rb;
+
     [Header("Mouse")]
     private float xRotate;
     private float yRotate;
     public float mouseSpeed = 1000f;
     public Transform playerCamere;
+    
 
     public void Start()
     {
@@ -17,8 +19,7 @@ public class PlayerCameraController : MonoBehaviour
         Cursor.visible = false; // 마우스 커서 아이콘 숨김.
 
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // 충돌시 물리회전 고정
-
+        rb.freezeRotation = true; // 충돌시 물리회전 고정  
     }
     public void MouseController()
     {
@@ -39,6 +40,12 @@ public class PlayerCameraController : MonoBehaviour
 
         //MouseOnOff();
     }
+    public void Zoom()
+    {
+        
+    }
+
+
     //public void MouseOnOff()
     //{
     //    if (Input.GetKey(KeyCode.Escape))

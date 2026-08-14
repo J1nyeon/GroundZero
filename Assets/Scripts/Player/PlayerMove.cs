@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
 
+        
         if (Input.GetKey(KeyCode.LeftShift))
         {
             applySpeed = sprintSpeed;
