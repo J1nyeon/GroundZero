@@ -16,10 +16,10 @@ public class PlayerCameraController : MonoBehaviour
     public void Start()
     {
         Cursor.lockState = CursorLockMode.Locked; // 마우스 커서 게임화면 중앙에 고정
-        Cursor.visible = false; // 마우스 커서 아이콘 숨김.
+        Cursor.visible = false; // 마우스 커서 숨김
 
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true; // 충돌시 물리회전 고정  
+        rb.freezeRotation = true; // 충돌시 물리회전 고정
     }
     public void MouseController()
     {

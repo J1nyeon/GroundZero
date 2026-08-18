@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 5f;
     public float sprintSpeed = 10f;
     public float applySpeed;
+    public Animator animator;
 
     private float xInput;
     private float zInput;
@@ -28,6 +29,7 @@ public class PlayerMove : MonoBehaviour
         Vector3 dirMove = (transform.right * xInput + transform.forward * zInput).normalized;
         dirMove *= applySpeed;
         rb.velocity = new Vector3(dirMove.x, rb.velocity.y, dirMove.z);
+   
     }
     public void Jump()
     {

@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
 
     //private float sphereRadios = 0.2f;
-    public float dirRacast = 0.007f;
+    public float dirRaycast = 0.007f;
     private float xInput;
     private float zInput;
 
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(groundCheck.position,Vector3.down, dirRacast,groundLayer);
+        isGrounded = Physics.Raycast(groundCheck.position,Vector3.down, dirRaycast, groundLayer);
         //isGrounded = Physics.CheckSphere(groundCheck.position, sphereRadios, groundLayer);
         if (isJumping == true)
         {
