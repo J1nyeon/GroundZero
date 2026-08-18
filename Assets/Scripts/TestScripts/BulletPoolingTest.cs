@@ -9,7 +9,6 @@ public class BulletPoolingTest : MonoBehaviour
     public List<GameObject> listBulletSet = new List<GameObject>();
     public GameObject prfBullet;
 
-
     public void Awake()
     {
         PoolSetting();
@@ -34,4 +33,5 @@ public class BulletPoolingTest : MonoBehaviour
         }
         return null;
     }
+   
 }

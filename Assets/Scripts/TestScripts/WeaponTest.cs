@@ -1,63 +1,91 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WeaponTest : MonoBehaviour
 {
     public WeaponData data;
     public BulletPoolingTest pool;
 
-    public Camera cam;
+    public int bullet;
+    public float currnetDamage;
+    public Transform muzzlePos;
+    public bool reloadCheck = false;
+    public bool canShoot = true;
+    public float nextFireTime;
 
-    public int currentBullet;
-    public Transform posMuzzle;
-    public float maxDistance = 100f;
-    public float currentDamage;
+    public float takeWeaponAniTime = 1.2f;
 
     public void Awake()
     {
         if (data != null)
         {
-            currentBullet = data.maxBullet;
-            currentDamage = data.currentShotDamage;
+            bullet = data.maxBullet;
+            currnetDamage = data.currentShotDamage;
         }
+        
+    }
+    public void OnEnable()
+    {
+        StartCoroutine(CoWeaponStartAnim());
     }
 
+    public void Fire()
+    {
+        
+        if (reloadCheck == false && Time.time >= nextFireTime)
+        {
+            Shoot();
+            nextFireTime = Time.time + data.fireRate;
+        }
+    }
     public void Shoot()
     {
-        Vector3 center = new Vector3(0.5f, 0.5f, 0);
-        Ray ray = cam.ViewportPointToRay(center);
-        Vector3 targetPoint;
-        
-        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
+        if (canShoot == false) return;
+
+        bullet--;
+        Debug.Log($"남은 탄약 개수 : {bullet}");
+        GameObject po = pool.GetBullet();
+        po.transform.position = muzzlePos.position;
+        //po.transform.rotation = muzzlePos.rotation;
+        po.transform.rotation = Camera.main.transform.rotation;
+
+        po.SetActive(true);
+
+        if (bullet <= 0)
         {
-            targetPoint = hit.point;
+            Reload();
         }
-        else
-        {
-            targetPoint = ray.GetPoint(maxDistance);
-        }
-
-        Vector3 bulletFireDir = (targetPoint - posMuzzle.position).normalized;
-
-        GameObject bullet = pool.GetBullet();
-
-        if (bullet != null)
-        {
-            bullet.transform.position = posMuzzle.position;
-            bullet.transform.forward = bulletFireDir;
-
-            BulletMoveTest BMT = bullet.GetComponent<BulletMoveTest>();
-
-            if (BMT != null)
-            {
-                BMT.Setup(targetPoint);
-            }
-            bullet.SetActive(true);
-        }
-
-
     }
 
+    public void Reload()
+    {
+        if (reloadCheck == true) return;
+        StartCoroutine(CoReload());
+    }
 
+    private IEnumerator CoReload()
+    {
+        reloadCheck = true;
+        canShoot = false;
+
+        Debug.Log("장전중 .. ");
+
+        yield return new WaitForSeconds(data.reloadTime);
+
+        bullet = data.maxBullet;
+        reloadCheck = false;
+        canShoot = true;
+        Debug.Log("장전 완료");
+    }
+
+    private IEnumerator CoWeaponStartAnim()
+    {
+        canShoot = false;
+
+        yield return new WaitForSeconds(takeWeaponAniTime);
+        canShoot = true;
+    }
 }
