@@ -7,6 +7,8 @@ public class WeaponController : MonoBehaviour
     //public Weapon_ weapon;
 
     public WeaponTest test;
+    public Animator animator;
+    public bool isZoom = false;
 
     public void Update()
     {
@@ -24,6 +26,18 @@ public class WeaponController : MonoBehaviour
         {
             test.Reload();
         }
-       
+        if (Input.GetKey(KeyCode.Mouse1))
+        {
+            isZoom = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Mouse1))
+        {
+            isZoom = false;
+        }
+        animator.SetBool("ZoomBool", isZoom);
+
+
+
+
     }
 }

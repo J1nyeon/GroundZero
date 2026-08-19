@@ -20,7 +20,7 @@ public class Weapon_ : MonoBehaviour
     public bool isReloading = false;
 
     [Header("애니메이션")]
-    public Animator animatorReload;
+    public Animator animators;
 
 
     private void Awake()
@@ -96,11 +96,11 @@ public class Weapon_ : MonoBehaviour
     public IEnumerator CoReloadTime()
     {
         isReloading = true;
-        animatorReload.SetBool("Is Reloading", true);
+        animators.SetBool("Is Reloading", true);
         yield return new WaitForSeconds(weaponData.reloadTime);
 
         currentBullet = weaponData.maxBullet;
-        animatorReload.SetBool("Is Reloading", false);
+        animators.SetBool("Is Reloading", false);
         isReloading = false;
         Debug.Log($"장전완료. 현재 총알 : {currentBullet}");
 
