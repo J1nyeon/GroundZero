@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WeaponTest : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class WeaponTest : MonoBehaviour
     public Animator animator;
 
     public float takeWeaponAniTime = 1.2f;
+   
 
     public void Awake()
     {
@@ -48,34 +50,32 @@ public class WeaponTest : MonoBehaviour
 
         bullet--;
         Debug.Log($"남은 탄약 개수 : {bullet}");
-        Vector3 centor = new Vector3(0.5f, 0.5f, 0f);
-        Ray ray = Camera.main.ViewportPointToRay(centor);
-        Vector3 targetPoint;
+
+        Vector3 center = new Vector3(0.5f, 0.5f, 0f);
+        Ray ray = Camera.main.ViewportPointToRay(center);
+        Vector3 targetPos;
 
         if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
         {
-            targetPoint = hit.point;
+            targetPos = hit.point;
         }
         else
         {
-            targetPoint = ray.GetPoint(maxDistance);
+            targetPos = ray.GetPoint(maxDistance);
         }
-        Vector3 dir = (targetPoint - muzzlePos.position).normalized;
+        
 
-
-
+        Vector3 dir = (targetPos - muzzlePos.position).normalized;
         GameObject po = pool.GetBullet();
         po.transform.position = muzzlePos.position;
         //po.transform.rotation = muzzlePos.rotation;
         //po.transform.rotation = Camera.main.transform.rotation;
+
         po.transform.forward = dir;
 
         po.SetActive(true);
 
-        if (bullet <= 0)
-        {
-            Reload();
-        }
+        
     }
 
     public void Reload()
@@ -107,5 +107,9 @@ public class WeaponTest : MonoBehaviour
 
         yield return new WaitForSeconds(takeWeaponAniTime);
         canShoot = true;
+    }
+    private void Update()
+    {
+        Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.red);
     }
 }
