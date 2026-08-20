@@ -1969,7 +1969,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1528022675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4285,10 +4285,10 @@ MonoBehaviour:
   bullet: 0
   currnetDamage: 0
   muzzlePos: {fileID: 1155363109}
-  reloadCheck: 0
+  maxDistance: 100
   canShoot: 1
   nextFireTime: 0
-  maxDistance: 100
+  reloadCheck: 0
   animator: {fileID: 103485873}
   takeWeaponAniTime: 1
 --- !u!4 &2012216354716989811

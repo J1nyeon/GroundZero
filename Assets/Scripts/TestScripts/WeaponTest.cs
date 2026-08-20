@@ -11,10 +11,12 @@ public class WeaponTest : MonoBehaviour
     public int bullet;
     public float currnetDamage;
     public Transform muzzlePos;
-    public bool reloadCheck = false;
+    public float maxDistance = 100f;
+
+
     public bool canShoot = true;
     public float nextFireTime;
-    public float maxDistance = 100f;
+    public bool reloadCheck = false;
 
     public Animator animator;
 
@@ -37,7 +39,6 @@ public class WeaponTest : MonoBehaviour
 
     public void Fire()
     {
-        
         if (reloadCheck == false && Time.time >= nextFireTime)
         {
             Shoot();
@@ -47,35 +48,23 @@ public class WeaponTest : MonoBehaviour
     public void Shoot()
     {
         if (canShoot == false) return;
-
         bullet--;
         Debug.Log($"남은 탄약 개수 : {bullet}");
-
-        Vector3 center = new Vector3(0.5f, 0.5f, 0f);
-        Ray ray = Camera.main.ViewportPointToRay(center);
-        Vector3 targetPos;
-
-        if (Physics.Raycast(ray, out RaycastHit hit, maxDistance))
+        Vector3 targetPoint;
+        Camera cam = Camera.main;
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance))
         {
-            targetPos = hit.point;
+            targetPoint = hit.point;
         }
-        else
+        else 
         {
-            targetPos = ray.GetPoint(maxDistance);
+            targetPoint =  cam.transform.position + cam.transform.forward * maxDistance;
         }
-        
-
-        Vector3 dir = (targetPos - muzzlePos.position).normalized;
         GameObject po = pool.GetBullet();
+        Vector3 dir = (targetPoint - muzzlePos.position).normalized;
         po.transform.position = muzzlePos.position;
-        //po.transform.rotation = muzzlePos.rotation;
-        //po.transform.rotation = Camera.main.transform.rotation;
-
         po.transform.forward = dir;
-
-        po.SetActive(true);
-
-        
+        po.SetActive(true); 
     }
 
     public void Reload()
