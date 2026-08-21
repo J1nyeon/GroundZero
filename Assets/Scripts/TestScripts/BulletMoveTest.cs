@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class BulletMoveTest : MonoBehaviour
 {
-    private Rigidbody rb;
+    public WeaponData data;
+
+    //private Rigidbody rb;
     public float bulletSpeed = 50f;
-    public float bulletForce = 10f;
+    //public float bulletForce = 10f;
 
     public Vector3 startPosition;
     public float maxDistance = 100f;
@@ -15,11 +17,13 @@ public class BulletMoveTest : MonoBehaviour
 
     public bool canMove = false;
 
+ 
     public void Start()
     {
         startPosition = transform.position;
         canMove = true;
-        rb = GetComponent<Rigidbody>();
+        // rb = GetComponent<Rigidbody>();
+
     }
 
     public void Update()
@@ -53,7 +57,8 @@ public class BulletMoveTest : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            //Enemy.TakeDamage(); 
+            EnemyStateTest est = other.gameObject.GetComponent<EnemyStateTest>();
+            est.TakeDamage(data.currentShotDamage); 
             Debug.Log("적과 충돌");
             canMove = false;
             //gameObject.SetActive(false);
@@ -66,9 +71,10 @@ public class BulletMoveTest : MonoBehaviour
     }
     public void BulletRbMove()
     {
-        rb.velocity *= bulletSpeed;
         
-        rb.AddForce(rb.velocity, ForceMode.Force);
+        //Vector3 dir = rb.transform.forward;
+        //dir *= bulletSpeed;
+        //rb.velocity = dir;
     }
 
 }

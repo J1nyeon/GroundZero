@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3332396072704143472}
   - component: {fileID: -1029759263526519505}
   - component: {fileID: -4618987252797017648}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: 5mm BulletTest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a26f19459da0f4b8871c9fb2c6ad72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 4165f506da20caa4b8ccf3d9740cca53, type: 2}
   bulletSpeed: 3
   bulletForce: 3
   startPosition: {x: 0, y: 0, z: 0}
@@ -99,8 +100,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Constraints: 112
+  m_CollisionDetection: 1
 --- !u!1001 &4498981667285519705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168,6 +169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5ab452f401cd182489b5f36cfb2d2f00,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
