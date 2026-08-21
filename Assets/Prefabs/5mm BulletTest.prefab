@@ -68,10 +68,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a26f19459da0f4b8871c9fb2c6ad72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpeed: 10
-  targetPosition: {x: 0, y: 0, z: 0}
+  bulletSpeed: 3
+  bulletForce: 3
+  startPosition: {x: 0, y: 0, z: 0}
   maxDistance: 100
   holesPool: {fileID: 0}
+  canMove: 0
 --- !u!54 &-4618987252797017648
 Rigidbody:
   m_ObjectHideFlags: 0

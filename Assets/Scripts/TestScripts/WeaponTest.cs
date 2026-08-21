@@ -55,10 +55,12 @@ public class WeaponTest : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance))
         {
             targetPoint = hit.point;
+            Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);
         }
         else 
         {
             targetPoint =  cam.transform.position + cam.transform.forward * maxDistance;
+            Debug.Log("카메라 레이에 충돌한 것 없음 ");
         }
         GameObject po = pool.GetBullet();
         Vector3 dir = (targetPoint - muzzlePos.position).normalized;
