@@ -11,6 +11,7 @@ public class PlayerState : MonoBehaviour
 
     private void Start()
     {
+        isAlive = true;
         currentHp = maxHp;        
     }
     private void Update()
@@ -23,14 +24,12 @@ public class PlayerState : MonoBehaviour
     public void TakeDamage(float damage)
     {
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
-        if (currentHp > 0)
+        currentHp -= damage;
+
+        if (currentHp <= 0)
         {
-            currentHp -= damage;
-            isAlive = true;
-            if (currentHp <= 0)
-            {
-                isAlive = false;
-            }
+            currentHp = 0f;
+            isAlive = false;
         }
     }
     public void Die()

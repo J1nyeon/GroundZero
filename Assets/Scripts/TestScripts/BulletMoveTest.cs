@@ -13,7 +13,7 @@ public class BulletMoveTest : MonoBehaviour
     public Vector3 startPosition;
     public float maxDistance = 100f;
 
-    public PoolingBulletHoles holesPool;
+    //public PoolingBulletHoles holesPool;
 
     public bool canMove = false;
 
@@ -52,16 +52,16 @@ public class BulletMoveTest : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             Debug.Log("벽에 충돌");
-            canMove = false;
-            //gameObject.SetActive(false);
+            //canMove = false;
+            gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyStateTest est = other.gameObject.GetComponent<EnemyStateTest>();
             est.TakeDamage(data.currentShotDamage); 
             Debug.Log("적과 충돌");
-            canMove = false;
-            //gameObject.SetActive(false);
+            //canMove = false;
+            gameObject.SetActive(false);
         }
     }
 

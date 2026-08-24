@@ -7,23 +7,51 @@ public class EnemyStateTest : MonoBehaviour
 {
     public EnemyData data;
     public float EnemyHp;
-    public Image hpUI;
+    public Slider hpSlider;
+
+    [Header("Circle")]
+    [Range(0, 30)]
+    public float viewRange;
+    [Range(0, 360)]
+    public float viewAngle;
+
+    public LayerMask targetMask;
     
-    // Start is called before the first frame update
+    
     private void Awake()
     {
-        EnemyHp = data.enemyHp;
+        hpSlider.value = 1f;
+        if (data != null)
+        {
+            EnemyHp = data.enemyHp;       
+        }
+    }
+
+    public void LookAtPlayer()
+    {
+        Collider[] collider = Physics.OverlapSphere(transform.position, viewRange, targetMask);
+        
     }
 
     public void TakeDamage(float damage)
     {
-        //EnemyHp = Mathf.Clamp(EnemyHp, 0, data.enemyHp);
-        
         EnemyHp -= damage;
+        EnemyHp = Mathf.Clamp(EnemyHp, 0, data.enemyHp);
+        
         Debug.Log("현재 HP : " + EnemyHp);
         if (0 >= EnemyHp)
         {
+            EnemyHp = 0f;
             Debug.Log("적 처치");
         }
+        HPUI();
     }
+    public void HPUI()
+    {
+        if (hpSlider != null)
+        {
+            hpSlider.value = EnemyHp / data.enemyHp;
+        }
+    }
+    
 }
