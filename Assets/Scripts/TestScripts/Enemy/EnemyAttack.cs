@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Video;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -10,8 +9,6 @@ public class EnemyAttack : MonoBehaviour
     public Transform firePoint;
 
     public float timer = 0;
-
-    
 
     void Update()
     {
@@ -30,10 +27,8 @@ public class EnemyAttack : MonoBehaviour
         {
             bullet.transform.position = firePoint.position;
             bullet.transform.rotation = firePoint.rotation;
-            bullet.SetActive(true);      
-            
+            bullet.SetActive(true);        
         }
-
     }
 
 

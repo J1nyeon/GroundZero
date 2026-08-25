@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,20 @@ public class EnemyStateTest : MonoBehaviour
     public float EnemyHp;
     public Slider hpSlider;
 
+    [Header("State")]
+    public Rigidbody rb;
+    public float moveSpeed = 3f;
+    public float distance = 3f;
+    public Transform target;
+
     [Header("Circle")]
     [Range(0, 30)]
     public float viewRange;
     [Range(0, 360)]
     public float viewAngle;
+
+
+    public float radius = 3f;
 
     public LayerMask targetMask;
     
@@ -31,6 +41,29 @@ public class EnemyStateTest : MonoBehaviour
     {
         Collider[] collider = Physics.OverlapSphere(transform.position, viewRange, targetMask);
         
+        
+    }
+
+    public void Idle()
+    {
+        rb.velocity = Vector3.zero;
+    }
+
+    public void Move()
+    {
+        Vector3 dir = rb.transform.forward;
+        rb.velocity = dir * moveSpeed;
+    }
+    public void Patrol()
+    {
+        Vector3 m = (target.position - transform.position).normalized;
+        float dis = Vector3.Distance(transform.position, target.position);
+
+        if (dis <= 0)
+        {
+            
+        }
+
     }
 
     public void TakeDamage(float damage)
@@ -53,5 +86,12 @@ public class EnemyStateTest : MonoBehaviour
             hpSlider.value = EnemyHp / data.enemyHp;
         }
     }
-    
+
+    public void OnDrawGizmos()
+    {
+        Handles.DrawSolidArc(transform.position,Vector3.up,transform.forward, viewAngle/2f, radius);
+        Handles.DrawSolidArc(transform.position, Vector3.up, transform.forward, -viewAngle / 2f, radius);
+
+    }
+
 }
