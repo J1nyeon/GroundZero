@@ -11,7 +11,6 @@ public class EnemyStateTest : MonoBehaviour
     public Slider hpSlider;
 
     [Header("State")]
-    public Rigidbody rb;
     public float moveSpeed = 3f;
     public float distance = 3f;
     public Transform target;
@@ -46,13 +45,12 @@ public class EnemyStateTest : MonoBehaviour
 
     public void Idle()
     {
-        rb.velocity = Vector3.zero;
+        
     }
 
     public void Move()
     {
-        Vector3 dir = rb.transform.forward;
-        rb.velocity = dir * moveSpeed;
+        
     }
     public void Patrol()
     {

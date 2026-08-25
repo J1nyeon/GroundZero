@@ -21,6 +21,7 @@ public class WeaponTest : MonoBehaviour
     public Animator animator;
 
     public float takeWeaponAniTime = 1.2f;
+    public LayerMask layer;
    
 
     public void Awake()
@@ -52,7 +53,9 @@ public class WeaponTest : MonoBehaviour
         Debug.Log($"남은 탄약 개수 : {bullet}");
         Vector3 targetPoint;
         Camera cam = Camera.main;
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance))
+
+        
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance, layer))
         {
             targetPoint = hit.point;
             Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);

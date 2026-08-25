@@ -47,6 +47,7 @@ public class BulletMoveTest : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.isTrigger) return;
         if (other.gameObject.CompareTag("Player")) return;
 
         if (other.gameObject.CompareTag("Wall"))
@@ -58,7 +59,7 @@ public class BulletMoveTest : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             EnemyStateTest est = other.gameObject.GetComponent<EnemyStateTest>();
-            est.TakeDamage(data.currentShotDamage); 
+            est.TakeDamage(data.currentShotDamage);
             Debug.Log("적과 충돌");
             //canMove = false;
             gameObject.SetActive(false);

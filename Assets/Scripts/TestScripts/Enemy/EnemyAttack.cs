@@ -7,18 +7,34 @@ public class EnemyAttack : MonoBehaviour
     public EnemyData data;
     public BulletPoolingTest pool;
     public Transform firePoint;
+    public Transform targetPlayer;
+
+    public EnemyDetectionZone edz;
 
     public float timer = 0;
+    public bool canAttack = false;
+    public float turnSpeed = 5f;
 
     void Update()
     {
-        timer += Time.deltaTime;
-        if (timer >= 0.5f)
+        if (edz.canAttack == true && targetPlayer != null)
         {
-            EnemyBulletSpawn();
-            timer = 0f;
+            timer += Time.deltaTime;
+            if (timer >= 0.5f && edz.canAttack == true)
+            {
+                timer = 0;
+                EnemyBulletSpawn();
+            }
+
+            Vector3 dir = (targetPlayer.position - transform.position).normalized;
+            dir.y = 0;
+            if (dir != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(dir);
+                float smoothMove = Time.deltaTime * turnSpeed;
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothMove);
+            }
         }
-        
     }
     public void EnemyBulletSpawn()
     {
@@ -27,13 +43,9 @@ public class EnemyAttack : MonoBehaviour
         {
             bullet.transform.position = firePoint.position;
             bullet.transform.rotation = firePoint.rotation;
-            bullet.SetActive(true);        
+            bullet.SetActive(true);
         }
     }
-
-
-
-
-
+   
 }
 
