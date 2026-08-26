@@ -36,34 +36,6 @@ public class EnemyStateTest : MonoBehaviour
         }
     }
 
-    public void LookAtPlayer()
-    {
-        Collider[] collider = Physics.OverlapSphere(transform.position, viewRange, targetMask);
-        
-        
-    }
-
-    public void Idle()
-    {
-        
-    }
-
-    public void Move()
-    {
-        
-    }
-    public void Patrol()
-    {
-        Vector3 m = (target.position - transform.position).normalized;
-        float dis = Vector3.Distance(transform.position, target.position);
-
-        if (dis <= 0)
-        {
-            
-        }
-
-    }
-
     public void TakeDamage(float damage)
     {
         EnemyHp -= damage;

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyDetectionZone : MonoBehaviour
 {
-
     public bool canAttack = false;
     private void OnTriggerEnter(Collider other)
     {

@@ -47,7 +47,6 @@ public class BulletMoveTest : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.isTrigger) return;
         if (other.gameObject.CompareTag("Player")) return;
 
         if (other.gameObject.CompareTag("Wall"))

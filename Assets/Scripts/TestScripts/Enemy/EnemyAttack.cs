@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAttack : MonoBehaviour
 {
@@ -12,15 +13,18 @@ public class EnemyAttack : MonoBehaviour
     public EnemyDetectionZone edz;
 
     public float timer = 0;
-    public bool canAttack = false;
     public float turnSpeed = 5f;
+    public NavMeshAgent agent;
 
     void Update()
     {
+
         if (edz.canAttack == true && targetPlayer != null)
         {
+            //agent.SetDestination(targetPlayer.position);
+
             timer += Time.deltaTime;
-            if (timer >= 0.5f && edz.canAttack == true)
+            if (timer >= 0.5f)
             {
                 timer = 0;
                 EnemyBulletSpawn();

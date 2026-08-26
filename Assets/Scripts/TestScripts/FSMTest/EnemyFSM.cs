@@ -1,23 +1,108 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFSM : MonoBehaviour
 {
-    public BaseState state;
+    [Header("State")]
+    public BaseState currentState;
+    public EnemyIdleState idleState;
+    public EnemyChaseState chaseState;
+    public EnemyAttackState attackState;
+    public EnemyPatrolState patrolState; // 아직 만들지않음.
 
-    void Start()
+    public NavMeshAgent agent;
+
+    public Transform targetPlayer;
+
+    [Header("Check Distance")]
+    public float chaseDistance = 10f;
+    public float attackDistance = 5f;
+    public float detectDistance = 12f;
+
+    //[Header("Patrol")]
+    //public Transform patrolPos1;
+    //public Transform patrolPos2;
+
+    [Header("Attack")]
+    public bool canAttack = false;
+    public Transform firePoint;
+    public BulletPoolingTest pool;
+
+    public float timer = 0;
+    public float turnSpeed = 5f;
+
+    public void Start()
     {
+        idleState = new EnemyIdleState(this);
+        chaseState = new EnemyChaseState(this);
+        attackState = new EnemyAttackState(this);
+        patrolState = new EnemyPatrolState(this);
+        currentState = idleState;
+        ChangeState(currentState);
+    }
+    public void ChangeState(BaseState nextState)
+    {
+        if (nextState == null) return;
         
-        if (state != null)
+        if (currentState != null)
         {
-            state.Enter();
+            currentState.Exit();
+        }
+        currentState = nextState;
+        currentState.Enter();
+    }
+
+    public void Update()
+    {
+        if (currentState == null) return;
+        currentState.Do();
+        Debug.Log($"현재 상태 : {currentState}");
+    }
+
+    public void Chase()
+    {
+        agent.SetDestination(targetPlayer.position);   
+    }
+    public void Detect() // 감지거리에서 이 함수를 먼저 호출함
+    {
+        // 천천히 플레이어 방향을 바라 볼 수 있게
+        Vector3 dir = (targetPlayer.position - transform.position).normalized;
+        dir.y = 0f;
+        if (dir == null) return;
+        Quaternion targetRotation = Quaternion.LookRotation(dir);
+        float smoothMove = Time.deltaTime * turnSpeed;
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothMove);
+    }
+    public void Attack()
+    {
+        timer += Time.deltaTime;
+        if (timer > 0.5f)
+        {
+            timer = 0f;
+            BulletSpawn();
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    public void Patrol()
     {
         
     }
+
+    public void BulletSpawn()
+    {
+        GameObject bullet = pool.GetBullet();
+        if (bullet == null) return;
+        bullet.transform.position = firePoint.position;
+        bullet.transform.rotation = firePoint.rotation;
+        bullet.SetActive(true);
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1f, 0f, 0f, 0.2f);
+        Gizmos.DrawSphere(transform.position, chaseDistance);
+    }
+
 }

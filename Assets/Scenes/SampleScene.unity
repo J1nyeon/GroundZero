@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AgentTypeID: 0
+  m_AgentTypeID: -1372625422
   m_CollectObjects: 0
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
@@ -407,7 +407,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 8e06bd860e424e9439de8f5423742cd1, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &176132772
 GameObject:
@@ -5042,16 +5042,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4603764098240116994, guid: 521ba01f03837844db96714237cc2434,
+    - target: {fileID: 3282255284654159112, guid: 521ba01f03837844db96714237cc2434,
         type: 3}
       propertyPath: pool
       value: 
       objectReference: {fileID: 1487769030}
-    - target: {fileID: 4603764098240116994, guid: 521ba01f03837844db96714237cc2434,
+    - target: {fileID: 3282255284654159112, guid: 521ba01f03837844db96714237cc2434,
         type: 3}
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 2617254341240031164}
+    - target: {fileID: 3282255284654159112, guid: 521ba01f03837844db96714237cc2434,
+        type: 3}
+      propertyPath: chaseDistance
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3282255284654159112, guid: 521ba01f03837844db96714237cc2434,
+        type: 3}
+      propertyPath: detectDistance
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4683239164355293315, guid: 521ba01f03837844db96714237cc2434,
         type: 3}
       propertyPath: target

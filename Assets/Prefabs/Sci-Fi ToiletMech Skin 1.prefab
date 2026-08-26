@@ -371,7 +371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1564177745692551715
 Transform:
   m_ObjectHideFlags: 0
@@ -3328,15 +3328,19 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fc3956512bc7215439fff8c79e83ed8c,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4603764098240116994}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fc3956512bc7215439fff8c79e83ed8c,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1062998598813713132}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fc3956512bc7215439fff8c79e83ed8c,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4683239164355293315}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fc3956512bc7215439fff8c79e83ed8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1428950901800771131}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fc3956512bc7215439fff8c79e83ed8c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3282255284654159112}
   m_SourcePrefab: {fileID: 100100000, guid: fc3956512bc7215439fff8c79e83ed8c, type: 3}
 --- !u!1 &214084178548226506 stripped
 GameObject:
@@ -3365,26 +3369,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4603764098240116994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 214084178548226506}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a464ec5da84b63419bab9e0079c536a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 723e647df1705d24891078004eb5b760, type: 2}
-  pool: {fileID: 0}
-  firePoint: {fileID: 3738033117546690249}
-  targetPlayer: {fileID: 0}
-  edz: {fileID: 5523262350027536413}
-  timer: 0
-  canAttack: 0
-  turnSpeed: 5
 --- !u!136 &1062998598813713132
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3432,6 +3416,50 @@ MonoBehaviour:
   targetMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!195 &1428950901800771131
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214084178548226506}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &3282255284654159112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 214084178548226506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f690bebb575077e4a97f95a3eb7511b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1428950901800771131}
+  targetPlayer: {fileID: 0}
+  chaseDistance: 13
+  attackDistance: 5
+  detectDistance: 15
+  canAttack: 0
+  firePoint: {fileID: 3738033117546690249}
+  pool: {fileID: 0}
+  timer: 0
+  turnSpeed: 5
 --- !u!4 &698977965254746992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fc3956512bc7215439fff8c79e83ed8c,
