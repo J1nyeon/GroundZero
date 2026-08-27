@@ -27,10 +27,12 @@ public class EnemyFSM : MonoBehaviour
     //public Transform patrolPos2;
 
     [Header("Attack")]
-    public bool canAttack = false;
+    public bool isBlocked;
+    public bool attackCheck = false;
     public Transform firePoint;
     public BulletPoolingTest pool;
     public LayerMask layer;
+    
 
     public float timer = 0;
     public float turnSpeed = 5f;
@@ -106,11 +108,32 @@ public class EnemyFSM : MonoBehaviour
     {
         targetDistance = Vector3.Distance(transform.position,targetPlayer.position);
     }
+
+    public void TargetRaycast()
+    {
+        Vector3 dir = (targetPlayer.transform.position - transform.position).normalized;
+
+        Debug.DrawRay(transform.position, dir * 100f, Color.magenta);
+
+        if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 100f, layer) == true)
+        {
+            Debug.Log(hit.collider.name);
+            if (hit.collider.CompareTag("Player"))
+            {
+                isBlocked = false;
+            }
+            else
+            {
+                isBlocked = true;
+            }
+            
+        }
+    }
     public void OnDrawGizmos()
     {
         Gizmos.color = new Color(0f, 1f, 0f);
         //Gizmos.DrawSphere(transform.position, chaseRange);
-        Gizmos.DrawLine(transform.position, targetPlayer.position);
+        //Gizmos.DrawLine(transform.position, targetPlayer.position);
     }
 
 }

@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Grounded"))
         {
             isGrounded = true;
-            Debug.Log("점프 가능");
+            //Debug.Log("점프 가능");
         }
     }
     private void FixedUpdate()

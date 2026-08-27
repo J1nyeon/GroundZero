@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        isGrounded = Physics.Raycast(groundCheck.position,Vector3.down, dirRaycast, groundLayer);
+        isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, dirRaycast, groundLayer);
         //isGrounded = Physics.CheckSphere(groundCheck.position, sphereRadios, groundLayer);
         if (isJumping == true)
         {

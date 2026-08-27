@@ -1,43 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyChaseState : BaseState
 {
     public EnemyChaseState(EnemyFSM fsm) : base(fsm) { }
 
-    public override void Enter() 
+    public override void Enter()
     {
         fsm.agent.isStopped = false;
     }
-    
+
     public override void Do()
-    { 
-        float maxDis = 100f;
-        if (Physics.Raycast(fsm.transform.position, fsm.targetPlayer.position, out RaycastHit hit, maxDis, fsm.layer) == true)
-        {
-            Debug.Log($"적 레이에 닿은 콜라이더: {hit.collider.name}");
-            if (hit.collider.CompareTag("Wall"))
-            {
-                fsm.canAttack = false;
-            }
-            if (hit.collider.CompareTag("Player"))
-            {
-                fsm.canAttack = true;
-            }
-        }
+    {
+        fsm.TargetRaycast();
         // 추격하다가
-        if (fsm.targetPlayer != null && fsm.canAttack == false)
+        if (fsm.targetPlayer != null)
         {
             fsm.Chase();
         }
-        // 공격 범위 내에 들어오면 Attack 상태로 전환
-        // float dis = Vector3.Distance(fsm.transform.position, fsm.targetPlayer.position);
+        // 공격 범위 내에 들어오고 플레이어 이외의 물체에 막혀있지 않다면 Attack 상태로 전환
         // 체이스상태 
-        if (fsm.targetDistance < fsm.attackRange && fsm.canAttack == true)
+        if (fsm.targetDistance < fsm.attackRange && fsm.isBlocked == false)
         {
-            
             fsm.ChangeState(fsm.attackState);
         }
         // TODO
@@ -48,5 +33,12 @@ public class EnemyChaseState : BaseState
             fsm.ChangeState(fsm.idleState);
         }
     }
-   
+    // 문제 
+    // 코너를 돌았을때 체이스상태인데도 추적하지않는 경우가 있음
+    // ㄴ 거리 수치입력을 다시 해야하는 부분인거같아보임
+    // 코너 이동시 한번씩 플레이어에게 달라붙을때까지 다가옴
+    // ㄴ NavMeshAgent때문인가 ?
+    // 가끔 벽뒤에서 fsm.canAttack이 true가 될때가 있음 
+    // ㄴ 벽에 딱 달라붙어 이동할 경우 그런것같아 보임
+
 }

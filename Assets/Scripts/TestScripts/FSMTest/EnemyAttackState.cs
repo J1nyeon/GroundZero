@@ -20,20 +20,19 @@ public class EnemyAttackState : BaseState
     {
         // 1. 공격 
         // 정면으로 레이를 쐈을때 벽이면 추격상태로 전환
-        // 캐릭터가 레이에 닿았을경우에만 공격
-        if (fsm.canAttack == true)
+        fsm.TargetRaycast();
+        if (fsm.isBlocked == false)
         {
-            fsm.Attack();
             fsm.Detect();
         }
+        fsm.Attack();
+        
        
 
-        // 2. 공격 범위에서 벗어나면 추격 Chase상태로 전환
-        //float dis = Vector3.Distance(fsm.transform.position, fsm.targetPlayer.position);
-        if (fsm.targetDistance > fsm.attackRange)
+        // 2. 공격 범위에서 벗어나면거나 물체에 막혀있어 공격 할 수가 없는 경우 추격 Chase상태로 전환
+        if (fsm.targetDistance > fsm.attackRange || fsm.isBlocked == true)
         {
             fsm.ChangeState(fsm.chaseState);
-            
         }
     }
     public override void Exit()
