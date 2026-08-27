@@ -18,9 +18,9 @@ public class EnemyFSM : MonoBehaviour
     public Transform targetPlayer;
 
     [Header("Check Distance")]
-    public float chaseDistance = 10f;
-    public float attackDistance = 5f;
-    public float detectDistance = 12f;
+    public float chaseRange = 10f;
+    public float attackRange = 5f;
+    public float detectRange = 12f;
 
     //[Header("Patrol")]
     //public Transform patrolPos1;
@@ -30,9 +30,11 @@ public class EnemyFSM : MonoBehaviour
     public bool canAttack = false;
     public Transform firePoint;
     public BulletPoolingTest pool;
+    public LayerMask layer;
 
     public float timer = 0;
     public float turnSpeed = 5f;
+    public float targetDistance;
 
     public void Start()
     {
@@ -59,6 +61,7 @@ public class EnemyFSM : MonoBehaviour
     {
         if (currentState == null) return;
         currentState.Do();
+        TargetDistance();
         Debug.Log($"현재 상태 : {currentState}");
     }
 
@@ -99,10 +102,15 @@ public class EnemyFSM : MonoBehaviour
         bullet.SetActive(true);
     }
 
+    public void TargetDistance()
+    {
+        targetDistance = Vector3.Distance(transform.position,targetPlayer.position);
+    }
     public void OnDrawGizmos()
     {
-        Gizmos.color = new Color(1f, 0f, 0f, 0.2f);
-        Gizmos.DrawSphere(transform.position, chaseDistance);
+        Gizmos.color = new Color(0f, 1f, 0f);
+        //Gizmos.DrawSphere(transform.position, chaseRange);
+        Gizmos.DrawLine(transform.position, targetPlayer.position);
     }
 
 }
