@@ -11,9 +11,9 @@ public class BulletPoolingTest : MonoBehaviour
 
     public void Awake()
     {
-        PoolSetting();
+        BulletPoolSetting();
     }
-    public void PoolSetting()
+    public void BulletPoolSetting()
     {
         for (int i = 0; i < poolSize; i++)
         {

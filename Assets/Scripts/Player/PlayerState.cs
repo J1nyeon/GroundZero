@@ -1,26 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
 {
-    public bool isAlive;
     public float currentHp;
     public float maxHp = 100f;
 
-
+    public Slider hpSlider;
+    
     private void Start()
     {
-        isAlive = true;
+        hpSlider.value = 1f;
         currentHp = maxHp;        
     }
-    private void Update()
-    {
-        if (isAlive == false)
-        {
-            Die();
-        }
-    }
+   
     public void TakeDamage(float damage)
     {
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
@@ -29,15 +24,8 @@ public class PlayerState : MonoBehaviour
         if (currentHp <= 0)
         {
             currentHp = 0f;
-            isAlive = false;
+            UIManager.instance.Lose();
         }
+        UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
     }
-    public void Die()
-    {
-        // LoseUI
-    }
-        
-
-
-
 }

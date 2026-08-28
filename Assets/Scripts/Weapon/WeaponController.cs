@@ -1,6 +1,10 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponController : MonoBehaviour
 {
@@ -9,6 +13,12 @@ public class WeaponController : MonoBehaviour
     public WeaponTest test;
     public Animator animator;
     public bool isZoom = false;
+
+    public bool interaction = false;
+    public GameObject exitPoint;
+    public GameObject goInteraction;
+    public Image interactionUI;
+    public TextMeshProUGUI txtInteraction;
 
     public void Update()
     {
@@ -22,10 +32,24 @@ public class WeaponController : MonoBehaviour
             }
             //weapon.Fire();
         }
+        ExitDistanse();
+        Debug.Log($"interaction ป๓ลย : {interaction}");
+        if (interaction == true)
+        {
+            goInteraction.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                UIManager.instance.Win();
+            }
+        }
+        else
+        {
+            goInteraction.SetActive(false);
+        }
         //if (Input.GetKeyDown(KeyCode.R) || weapon.currentBullet <= 0)
         //{
-            //weapon.Reload();
-           
+        //weapon.Reload();
+
         //}
         if (Input.GetKeyDown(KeyCode.R) || test.bullet <= 0)
         {
@@ -40,5 +64,29 @@ public class WeaponController : MonoBehaviour
             isZoom = false;
         }
         animator.SetBool("ZoomBool", isZoom);
+    }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Exit"))
+    //    {
+    //        interaction = true;
+    //    }
+    //    else
+    //    {
+    //        interaction = false;
+    //    }
+    //}
+    public void ExitDistanse()
+    {
+        float dis = Vector3.Distance(exitPoint.transform.position, transform.position);
+        if (dis < 4f)
+        {
+            interaction = true;
+        }
+        else
+        {
+            interaction = false;
+        }
     }
 }

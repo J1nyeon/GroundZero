@@ -6,7 +6,7 @@ public class BulletMoveTest : MonoBehaviour
 {
     public WeaponData data;
 
-    //private Rigidbody rb;
+    private Rigidbody rb;
     public float bulletSpeed = 50f;
     //public float bulletForce = 10f;
 
@@ -22,7 +22,7 @@ public class BulletMoveTest : MonoBehaviour
     {
         startPosition = transform.position;
         canMove = true;
-        // rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
 
     }
 
@@ -31,12 +31,12 @@ public class BulletMoveTest : MonoBehaviour
         if (canMove == false)
             return;
 
-        float moveDis = bulletSpeed * Time.deltaTime;
+        //float moveDis = bulletSpeed * Time.deltaTime;
 
-        //TODO.
-        //리지드바디 움직임으로 바꾸기.
+        ////TODO.
+        ////리지드바디 움직임으로 바꾸기.
 
-        transform.Translate(Vector3.forward * moveDis);
+        //transform.Translate(Vector3.forward * moveDis);
 
         float dis = Vector3.Distance(startPosition, transform.position);
         if (dis >= maxDistance)
@@ -49,8 +49,14 @@ public class BulletMoveTest : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player")) return;
 
+
         if (other.gameObject.CompareTag("Wall"))
         {
+            GameObject go = PoolingBulletHoles.instance.GetObjectBulletHoles();
+            go.transform.position = transform.position;
+            // 회전을 어떻게 해야하지 ?
+            go.SetActive(true);
+
             Debug.Log("벽에 충돌");
             //canMove = false;
             gameObject.SetActive(false);
@@ -63,18 +69,19 @@ public class BulletMoveTest : MonoBehaviour
             //canMove = false;
             gameObject.SetActive(false);
         }
+
     }
 
     public void FixedUpdate()
     {
-        //BulletRbMove();
+        BulletRbMove();
     }
     public void BulletRbMove()
     {
-        
-        //Vector3 dir = rb.transform.forward;
-        //dir *= bulletSpeed;
-        //rb.velocity = dir;
+
+        Vector3 dir = rb.transform.forward;
+        dir *= bulletSpeed;
+        rb.velocity = dir;
     }
 
 }

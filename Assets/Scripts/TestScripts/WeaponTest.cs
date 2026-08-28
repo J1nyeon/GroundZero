@@ -7,6 +7,7 @@ public class WeaponTest : MonoBehaviour
 {
     public WeaponData data;
     public BulletPoolingTest pool;
+    public PoolingBulletHoles poolHoles;
 
     public int bullet;
     public float currnetDamage;
@@ -58,6 +59,14 @@ public class WeaponTest : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance, layer))
         {
             targetPoint = hit.point;
+            //if (hit.collider.CompareTag("Wall"))
+            //{
+            //    GameObject holes = poolHoles.GetObjectBulletHoles();
+                
+            //    holes.transform.position = targetPoint;
+            //    holes.transform.rotation = Quaternion.LookRotation(hit.normal);
+            //    StartCoroutine(CoEffectSet(holes));
+            //}
             Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);
         }
         else 
@@ -105,5 +114,12 @@ public class WeaponTest : MonoBehaviour
     private void Update()
     {
         Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.red);
+    }
+    public IEnumerator CoEffectSet(GameObject holes)
+    {
+        holes.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+        holes.SetActive(false);
     }
 }

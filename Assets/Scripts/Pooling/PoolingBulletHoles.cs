@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PoolingBulletHoles : MonoBehaviour
 {
+    public static PoolingBulletHoles instance;
+
     public List<GameObject> listBulletHoles = new List<GameObject>();
 
     public int poolSize = 60;
@@ -14,6 +16,10 @@ public class PoolingBulletHoles : MonoBehaviour
     
     void Awake()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
         SetBulletHolesPool();
     }
 
@@ -39,9 +45,8 @@ public class PoolingBulletHoles : MonoBehaviour
         }
         return null;
     }
-    // Update is called once per frame
-    void Update()
+    public void HolesBool()
     {
-        
+        GetObjectBulletHoles().SetActive(true);
     }
 }

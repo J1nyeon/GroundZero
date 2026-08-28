@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 4165f506da20caa4b8ccf3d9740cca53, type: 2}
-  bulletSpeed: 3
+  bulletSpeed: 20
   startPosition: {x: 0, y: 0, z: 0}
   maxDistance: 100
   canMove: 0
@@ -96,7 +96,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1

@@ -51,12 +51,10 @@ public class EnemyStateTest : MonoBehaviour
     }
     public void HPUI()
     {
-        if (hpSlider != null)
-        {
-            hpSlider.value = EnemyHp / data.enemyHp;
-        }
+        UIManager.instance.HpUI(hpSlider, EnemyHp, data.enemyHp);
     }
 
+    
     public void OnDrawGizmos()
     {
         Handles.DrawSolidArc(transform.position,Vector3.up,transform.forward, viewAngle/2f, radius);
