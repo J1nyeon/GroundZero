@@ -14,11 +14,6 @@ public class WeaponController : MonoBehaviour
     public Animator animator;
     public bool isZoom = false;
 
-    public bool interaction = false;
-    public GameObject exitPoint;
-    public GameObject goInteraction;
-    public Image interactionUI;
-    public TextMeshProUGUI txtInteraction;
 
     public void Update()
     {
@@ -32,20 +27,7 @@ public class WeaponController : MonoBehaviour
             }
             //weapon.Fire();
         }
-        ExitDistanse();
-        Debug.Log($"interaction ป๓ลย : {interaction}");
-        if (interaction == true)
-        {
-            goInteraction.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                UIManager.instance.Win();
-            }
-        }
-        else
-        {
-            goInteraction.SetActive(false);
-        }
+       
         //if (Input.GetKeyDown(KeyCode.R) || weapon.currentBullet <= 0)
         //{
         //weapon.Reload();
@@ -66,27 +48,6 @@ public class WeaponController : MonoBehaviour
         animator.SetBool("ZoomBool", isZoom);
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Exit"))
-    //    {
-    //        interaction = true;
-    //    }
-    //    else
-    //    {
-    //        interaction = false;
-    //    }
-    //}
-    public void ExitDistanse()
-    {
-        float dis = Vector3.Distance(exitPoint.transform.position, transform.position);
-        if (dis < 4f)
-        {
-            interaction = true;
-        }
-        else
-        {
-            interaction = false;
-        }
-    }
+    
+   
 }

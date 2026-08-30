@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5580109252959865660}
-  - component: {fileID: 5580109252959865658}
-  - component: {fileID: 5580109252959865659}
   m_Layer: 9
   m_Name: 8X Sight
   m_TagString: Untagged
@@ -25,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5580109252959865661}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,61 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2702475821356125023}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5580109252959865658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5580109252959865661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9627d511a2afc3243bdaeff46f84d4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Sight
-  Name: 8X Scope
-  m_damage: 100
-  m_spread: 100
-  m_fireRate: 100
-  m_range: 100
-  m_muzzleVelocity: 100
-  m_recoil: 100
-  m_visualRecoil: 100
-  m_aimSpeed: 100
---- !u!114 &5580109252959865659
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5580109252959865661}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca8e4f45194a154e843ffa1d55d5d99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  presets:
-  - fieldOfView: 15
-    weaponFieldOfView: 15
-    position: {x: -0.081, y: 0.022, z: -0.04}
-    rotation: {x: 0, y: 0, z: 0}
-    leanRightOffset: {x: -0.037, y: 0.009, z: 0}
-    leanLeftOffset: {x: 0.037, y: 0.009, z: 0}
-  - fieldOfView: 55
-    weaponFieldOfView: 55
-    position: {x: -0.09, y: -0.03, z: 0.06}
-    rotation: {x: 0, y: 0, z: 45}
-    leanRightOffset: {x: 0, y: 0, z: 0}
-    leanLeftOffset: {x: 0, y: 0, z: 0}
-  onAimEnter:
-    m_PersistentCalls:
-      m_Calls: []
-  OnAimExit:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &2453236999159475380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,7 +122,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -4982246910904083089, guid: 2df2bfb0961bb02469bde1c07d21d875,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c687ab51d00a91b4894a19d55b274231, type: 2}
     - target: {fileID: -3913916400222787055, guid: 2df2bfb0961bb02469bde1c07d21d875,
@@ -217,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3717442183570428599, guid: 2df2bfb0961bb02469bde1c07d21d875,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0bb0291c39eda1c4ebf81def75d1e985, type: 2}
     - target: {fileID: 4820542772251406005, guid: 2df2bfb0961bb02469bde1c07d21d875,
@@ -242,12 +187,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7021475828731712600, guid: 2df2bfb0961bb02469bde1c07d21d875,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fc8c1e75d67dd7a45825952ece5aa0f0, type: 2}
     - target: {fileID: 7202271454713460447, guid: 2df2bfb0961bb02469bde1c07d21d875,
         type: 3}
-      propertyPath: 'm_Materials.Array.data[0]'
+      propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 0bb0291c39eda1c4ebf81def75d1e985, type: 2}
     - target: {fileID: 8650871299832377412, guid: 2df2bfb0961bb02469bde1c07d21d875,

@@ -23,6 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181229927423900560}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,7 +32,6 @@ Transform:
   - {fileID: 6181229929058833424}
   - {fileID: 4516540347212791940}
   m_Father: {fileID: 6181229928533873828}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6181229928533873829
 GameObject:
@@ -42,8 +42,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6181229928533873828}
-  - component: {fileID: 6181229928533873830}
-  - component: {fileID: 6181229928533873831}
   m_Layer: 9
   m_Name: Red Dot 3
   m_TagString: Untagged
@@ -58,6 +56,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181229928533873829}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -65,50 +64,7 @@ Transform:
   m_Children:
   - {fileID: 6181229927423900563}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6181229928533873830
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6181229928533873829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9627d511a2afc3243bdaeff46f84d4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Sight
-  Name: Red Dot 3
-  m_damage: 100
-  m_spread: 100
-  m_fireRate: 100
-  m_range: 100
-  m_muzzleVelocity: 100
-  m_recoil: 100
-  m_visualRecoil: 100
-  m_aimSpeed: 100
---- !u!114 &6181229928533873831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6181229928533873829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cca8e4f45194a154e843ffa1d55d5d99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  presets:
-  - fieldOfView: 55
-    weaponFieldOfView: 50
-    position: {x: -0.0821, y: 0.024, z: -0.02}
-    rotation: {x: 0, y: 0, z: 0}
-    leanRightOffset: {x: -0.031, y: 0.007, z: 0}
-    leanLeftOffset: {x: 0.031, y: 0.007, z: 0}
-  index: 0
 --- !u!1 &6181229929058833425
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,13 +90,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6181229929058833425}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.97924554, y: 0.2026777, z: 0.00000024586885, w: 0.0000013411046}
   m_LocalPosition: {x: 0.04699995, y: 0.30699942, z: 1.049}
   m_LocalScale: {x: 20.324917, y: 20.324917, z: 20.324917}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6181229927423900563}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -180, y: 0, z: 23.386993}
 --- !u!33 &6181229929058833426
 MeshFilter:

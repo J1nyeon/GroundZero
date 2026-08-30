@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5775027561164909772}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9116482618706161306}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &4976020219115667751
 LineRenderer:
@@ -159,13 +159,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6605842995529795321}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.0042, y: -0.005, z: -0.0299}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9116482617208964009}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9116482617028903208
 GameObject:
@@ -192,13 +192,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482617028903208}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0008, z: 0}
   m_LocalScale: {x: 0.0027403454, y: 0.0027403454, z: 0.0027403454}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9116482618638163984}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9116482617028903211
 MeshFilter:
@@ -273,6 +273,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482617208964008}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 8.535, y: 8.535, z: 8.535}
@@ -283,7 +284,6 @@ Transform:
   - {fileID: 8968154403763125919}
   - {fileID: 9116482618638163984}
   m_Father: {fileID: 9116482618706161306}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9116482617582436401
 GameObject:
@@ -310,13 +310,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482617582436401}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.0008, z: 0}
   m_LocalScale: {x: 0.037088837, y: 0.037088837, z: 0.037088837}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9116482618638163984}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9116482617582436404
 MeshFilter:
@@ -391,6 +391,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482618638163999}
+  serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0.0000000558792, z: 0.00000018067642, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0.4505}
   m_LocalScale: {x: 0.33834052, y: 0.33834052, z: 0.33834052}
@@ -399,7 +400,6 @@ Transform:
   - {fileID: 9116482617028903209}
   - {fileID: 9116482617582436402}
   m_Father: {fileID: 9116482617208964009}
-  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &9116482618706161305
 GameObject:
@@ -410,8 +410,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9116482618706161306}
-  - component: {fileID: 9116482618706161308}
-  - component: {fileID: 3720961647062669668}
   m_Layer: 9
   m_Name: Laser
   m_TagString: Untagged
@@ -426,6 +424,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482618706161305}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -434,67 +433,7 @@ Transform:
   - {fileID: 9116482617208964009}
   - {fileID: 8901852377392656788}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9116482618706161308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9116482618706161305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9627d511a2afc3243bdaeff46f84d4b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: Laser
-  Name: Laser
-  m_damage: 100
-  m_spread: 100
-  m_fireRate: 100
-  m_range: 100
-  m_muzzleVelocity: 100
-  m_recoil: 100
-  m_visualRecoil: 100
-  m_aimSpeed: 100
---- !u!114 &3720961647062669668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9116482618706161305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfaf4d6ee18689f41a35ae8a7d1abd84, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toggleLaserInputAction:
-    m_Name: ToggleLaser
-    m_Type: 1
-    m_ExpectedControlType: 
-    m_Id: 5eb8eeca-8d2f-4866-a325-e4ff797ec5c3
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 20263be2-4c50-4faa-bc2b-8d1ceba0766c
-      m_Path: <Keyboard>/l
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: ToggleLaser
-      m_Flags: 0
-    m_Flags: 0
-  interactableLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  laserSource: {fileID: 4471300938025824062}
-  laserDot: {fileID: 9116482618638163984}
-  laserRange: {fileID: 9116482618753912438}
-  laserLine: {fileID: 4976020219115667751}
-  isLaserOn: 1
 --- !u!1 &9116482618753912437
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,13 +457,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116482618753912437}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9116482617208964009}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &8935125817803577716
 PrefabInstance:
