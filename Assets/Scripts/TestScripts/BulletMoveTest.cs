@@ -55,7 +55,7 @@ public class BulletMoveTest : MonoBehaviour
             GameObject go = PoolingBulletHoles.instance.GetObjectBulletHoles();
             go.transform.position = transform.position;
             // 회전을 어떻게 해야하지 ?
-            go.SetActive(true);
+            StartCoroutine(CoHolesPool(go));
 
             Debug.Log("벽에 충돌");
             //canMove = false;
@@ -82,6 +82,13 @@ public class BulletMoveTest : MonoBehaviour
         Vector3 dir = rb.transform.forward;
         dir *= bulletSpeed;
         rb.velocity = dir;
+    }
+
+    public IEnumerator CoHolesPool(GameObject go)
+    {
+        go.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        go.SetActive(false);
     }
 
 }

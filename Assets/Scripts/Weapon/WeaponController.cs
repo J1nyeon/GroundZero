@@ -10,6 +10,7 @@ public class WeaponController : MonoBehaviour
 {
     //public Weapon_ weapon;
 
+
     public WeaponTest test;
     public Animator animator;
     public bool isZoom = false;
@@ -20,11 +21,11 @@ public class WeaponController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             test.Fire();
-            Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (Physics.Raycast(pos,Vector3.forward,out RaycastHit hit,100f))
-            {
-                Debug.Log(hit.collider.name);
-            }
+            //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //if (Physics.Raycast(pos,Vector3.forward,out RaycastHit hit,100f))
+            //{
+            //    Debug.Log(hit.collider.name);
+            //}
             //weapon.Fire();
         }
        

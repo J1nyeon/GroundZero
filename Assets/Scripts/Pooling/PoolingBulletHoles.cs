@@ -14,7 +14,7 @@ public class PoolingBulletHoles : MonoBehaviour
     public GameObject prfBulletHoles;
 
     
-    void Awake()
+    private void Awake()
     {
         if(instance == null)
         {

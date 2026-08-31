@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class WeaponTest : MonoBehaviour
     public WeaponData data;
     public BulletPoolingTest pool;
     public PoolingBulletHoles poolHoles;
+    public PoolMuzzleEffect poolMuzzleEffect;
 
     public int bullet;
     public float currnetDamage;
@@ -23,7 +25,6 @@ public class WeaponTest : MonoBehaviour
 
     public float takeWeaponAniTime = 1.2f;
     public LayerMask layer;
-   
 
     public void Awake()
     {
@@ -44,8 +45,10 @@ public class WeaponTest : MonoBehaviour
         if (reloadCheck == false && Time.time >= nextFireTime)
         {
             Shoot();
+            MuzzleEffect();
             nextFireTime = Time.time + data.fireRate;
         }
+        
     }
     public void Shoot()
     {
@@ -75,10 +78,20 @@ public class WeaponTest : MonoBehaviour
             Debug.Log("카메라 레이에 충돌한 것 없음 ");
         }
         GameObject po = pool.GetBullet();
+        
         Vector3 dir = (targetPoint - muzzlePos.position).normalized;
         po.transform.position = muzzlePos.position;
         po.transform.forward = dir;
-        po.SetActive(true); 
+        po.SetActive(true);
+        
+    }
+    public void MuzzleEffect()
+    {
+        GameObject flashEffect = poolMuzzleEffect.GetFlash();
+        GameObject smokeEffect = poolMuzzleEffect.GetSmoke();
+        flashEffect.transform.position = muzzlePos.position;
+        smokeEffect.transform.position = muzzlePos.position;
+        StartCoroutine(CoMuzzleEffect(flashEffect,smokeEffect));
     }
 
     public void Reload()
@@ -111,9 +124,14 @@ public class WeaponTest : MonoBehaviour
         yield return new WaitForSeconds(takeWeaponAniTime);
         canShoot = true;
     }
-    private void Update()
+    public IEnumerator CoMuzzleEffect(GameObject flash, GameObject smoke)
     {
-        Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.red);
+        flash.SetActive(true);
+        smoke.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+        flash.SetActive(false);
+        smoke.SetActive(false);
     }
     public IEnumerator CoEffectSet(GameObject holes)
     {
@@ -121,5 +139,9 @@ public class WeaponTest : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         holes.SetActive(false);
+    }
+    private void Update()
+    {
+        Debug.DrawRay(transform.position, Vector3.forward * 10f, Color.red);
     }
 }

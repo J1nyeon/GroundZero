@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        ExitDistanse();
+        //ExitDistanse();
         Debug.Log($"interaction ป๓ลย : {interaction}");
         if (interaction == true)
         {
@@ -30,17 +30,21 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Exit"))
-    //    {
-    //        interaction = true;
-    //    }
-    //    else
-    //    {
-    //        interaction = false;
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Exit"))
+        {
+            interaction = true;
+        }
+        
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Exit"))
+        {
+            interaction = false;
+        }
+    }
     public void ExitDistanse()
     {
         float dis = Vector3.Distance(exitPoint.transform.position, transform.position);
