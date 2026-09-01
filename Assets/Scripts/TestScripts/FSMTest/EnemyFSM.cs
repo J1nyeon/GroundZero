@@ -22,9 +22,9 @@ public class EnemyFSM : MonoBehaviour
     public float attackRange = 5f;
     public float detectRange = 12f;
 
-    //[Header("Patrol")]
-    //public Transform patrolPos1;
-    //public Transform patrolPos2;
+    [Header("Patrol")]
+    public Transform[] patrolWaypoint;
+    public int index;
 
     [Header("Attack")]
     public bool isBlocked;
@@ -92,8 +92,11 @@ public class EnemyFSM : MonoBehaviour
     }
     public void Patrol()
     {
-        
+        index = (index + 1) % patrolWaypoint.Length;
+        agent.SetDestination(patrolWaypoint[index].position);
+
     }
+   
 
     public void BulletSpawn()
     {

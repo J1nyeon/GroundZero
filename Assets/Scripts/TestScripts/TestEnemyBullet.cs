@@ -9,7 +9,6 @@ public class TestEnemyBullet : MonoBehaviour
     
     public float bulletSpeed = 3f;
 
-
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();

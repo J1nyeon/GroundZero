@@ -27,8 +27,6 @@ public class EnemyAttackState : BaseState
         }
         fsm.Attack();
         
-       
-
         // 2. 공격 범위에서 벗어나면거나 물체에 막혀있어 공격 할 수가 없는 경우 추격 Chase상태로 전환
         if (fsm.targetDistance > fsm.attackRange || fsm.isBlocked == true)
         {
