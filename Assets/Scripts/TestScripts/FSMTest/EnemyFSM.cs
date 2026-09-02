@@ -69,7 +69,7 @@ public class EnemyFSM : MonoBehaviour
 
     public void Chase()
     {
-        agent.SetDestination(targetPlayer.position);   
+        agent.SetDestination(targetPlayer.position);
     }
     public void Detect() // 감지거리에서 이 함수를 먼저 호출함
     {
