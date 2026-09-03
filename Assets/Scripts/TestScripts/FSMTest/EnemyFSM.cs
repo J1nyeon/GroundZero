@@ -20,6 +20,7 @@ public class EnemyFSM : MonoBehaviour
     [Header("Check Distance")]
     public float chaseRange = 10f;
     public float attackRange = 5f;
+    public float longRange = 15f;
     public float detectRange = 12f;
 
     [Header("Patrol")]
@@ -37,9 +38,12 @@ public class EnemyFSM : MonoBehaviour
     public float timer = 0;
     public float turnSpeed = 5f;
     public float targetDistance;
+
     [Header("Animation")]
     public Animator animator;
-    public bool isAttackCheck = false;
+    public bool isAttack = false;
+    public bool isIdle = true;
+    public bool isChase = false;
 
     public void Start()
     {
@@ -66,8 +70,8 @@ public class EnemyFSM : MonoBehaviour
     public void Update()
     {
         if (currentState == null) return;
-        currentState.Do();
         TargetDistance();
+        currentState.Do();
         Debug.Log($"현재 상태 : {currentState}");
     }
 
@@ -135,6 +139,17 @@ public class EnemyFSM : MonoBehaviour
             }
             
         }
+    }
+    public void StateAnimation(bool idle, bool chase, bool attack)
+    {
+        isIdle = idle;
+        isChase = chase;
+        isAttack = attack;
+
+        animator.SetBool("isIdle", idle);
+        animator.SetBool("isChase", chase);
+        animator.SetBool("isAttack", attack);
+
     }
     public void OnDrawGizmos()
     {

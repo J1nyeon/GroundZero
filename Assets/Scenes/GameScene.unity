@@ -3165,7 +3165,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -3193,7 +3193,8 @@ MonoBehaviour:
   targetPlayer: {fileID: 2617254341240031164}
   chaseRange: 9
   attackRange: 7
-  detectRange: 12
+  longRange: 13
+  detectRange: 10
   patrolWaypoint: []
   index: 0
   isBlocked: 0
@@ -3207,7 +3208,9 @@ MonoBehaviour:
   turnSpeed: 5
   targetDistance: 0
   animator: {fileID: 8540179940889672664}
-  isAttackCheck: 0
+  isAttack: 0
+  isIdle: 1
+  isChase: 0
 --- !u!136 &2132720341
 CapsuleCollider:
   m_ObjectHideFlags: 0

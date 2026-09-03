@@ -11,11 +11,8 @@ public class EnemyAttackState : BaseState
     {
         fsm.timer = 0f; // 들어올때마다 초기화
         //fsm.canAttack = true; // 공격 가능상태로 전환
-        fsm.isAttackCheck = true;
-        if (fsm.isAttackCheck == true)
-        {
-            fsm.animator.SetTrigger("Attack");
-        }
+        fsm.StateAnimation(false, false, true);
+
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();
     }

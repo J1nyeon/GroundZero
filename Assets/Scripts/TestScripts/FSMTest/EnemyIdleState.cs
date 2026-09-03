@@ -8,9 +8,8 @@ public class EnemyIdleState : BaseState
 
     public override void Enter() 
     {
-        fsm.isAttackCheck = false;
-        //애니메이션 재생
-        fsm.animator.SetTrigger("Idle");
+        
+        fsm.StateAnimation(true, false, false);
 
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();

@@ -9,8 +9,9 @@ public class EnemyChaseState : BaseState
 
     public override void Enter()
     {
-        fsm.isAttackCheck = false;
-        fsm.animator.SetTrigger("DectectPlayer");
+        
+        fsm.StateAnimation(false, true, false);
+
         fsm.agent.isStopped = false;
     }
 
@@ -32,7 +33,7 @@ public class EnemyChaseState : BaseState
         // TODO
         // 일정 거리내에서 벗어나면 patrol 상태로 
         // 일단 idle상태로 해놓고 추후 수정
-        if (fsm.targetDistance > fsm.chaseRange)
+        if (fsm.targetDistance > fsm.longRange)
         {
             fsm.ChangeState(fsm.idleState);
         }
