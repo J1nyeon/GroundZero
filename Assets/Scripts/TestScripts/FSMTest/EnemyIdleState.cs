@@ -9,7 +9,6 @@ public class EnemyIdleState : BaseState
     public override void Enter() 
     {
         //애니메이션 재생
-
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();
     }

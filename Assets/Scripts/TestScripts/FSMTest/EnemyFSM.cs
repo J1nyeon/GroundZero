@@ -37,6 +37,8 @@ public class EnemyFSM : MonoBehaviour
     public float timer = 0;
     public float turnSpeed = 5f;
     public float targetDistance;
+    [Header("Animation")]
+    public Animator animator;
 
     public void Start()
     {

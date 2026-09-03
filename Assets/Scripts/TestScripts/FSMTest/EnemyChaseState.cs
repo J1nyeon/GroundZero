@@ -5,9 +5,11 @@ using UnityEngine;
 public class EnemyChaseState : BaseState
 {
     public EnemyChaseState(EnemyFSM fsm) : base(fsm) { }
+   
 
     public override void Enter()
     {
+        
         fsm.agent.isStopped = false;
     }
 
