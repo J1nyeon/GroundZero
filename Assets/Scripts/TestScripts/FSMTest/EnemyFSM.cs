@@ -39,6 +39,7 @@ public class EnemyFSM : MonoBehaviour
     public float targetDistance;
     [Header("Animation")]
     public Animator animator;
+    public bool isAttackCheck = false;
 
     public void Start()
     {
@@ -57,6 +58,7 @@ public class EnemyFSM : MonoBehaviour
         {
             currentState.Exit();
         }
+        Debug.Log($"[State Change] {currentState?.GetType().Name} -> {nextState.GetType().Name}");
         currentState = nextState;
         currentState.Enter();
     }

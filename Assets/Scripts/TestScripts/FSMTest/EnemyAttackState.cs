@@ -11,7 +11,11 @@ public class EnemyAttackState : BaseState
     {
         fsm.timer = 0f; // 들어올때마다 초기화
         //fsm.canAttack = true; // 공격 가능상태로 전환
-
+        fsm.isAttackCheck = true;
+        if (fsm.isAttackCheck == true)
+        {
+            fsm.animator.SetTrigger("Attack");
+        }
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();
     }
@@ -27,6 +31,7 @@ public class EnemyAttackState : BaseState
         }
         fsm.Attack();
         
+
         // 2. 공격 범위에서 벗어나면거나 물체에 막혀있어 공격 할 수가 없는 경우 추격 Chase상태로 전환
         if (fsm.targetDistance > fsm.attackRange || fsm.isBlocked == true)
         {

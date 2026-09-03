@@ -9,7 +9,8 @@ public class EnemyChaseState : BaseState
 
     public override void Enter()
     {
-        
+        fsm.isAttackCheck = false;
+        fsm.animator.SetTrigger("DectectPlayer");
         fsm.agent.isStopped = false;
     }
 
@@ -20,6 +21,7 @@ public class EnemyChaseState : BaseState
         if (fsm.targetPlayer != null)
         {
             fsm.Chase();
+            
         }
         // 공격 범위 내에 들어오고 플레이어 이외의 물체에 막혀있지 않다면 Attack 상태로 전환
         // 체이스상태 
