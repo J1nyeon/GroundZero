@@ -9,12 +9,13 @@ public class WeaponTest : MonoBehaviour
     public WeaponData data;
     public BulletPoolingTest pool;
     public PoolingBulletHoles poolHoles;
-    public PoolMuzzleEffect poolMuzzleEffect;
 
     public int bullet;
     public float currnetDamage;
     public Transform muzzlePos;
     public float maxDistance = 100f;
+    //public GameObject paticleMuzzleEffect;
+    public ParticleSystem particle;
 
 
     public bool canShoot = true;
@@ -45,7 +46,9 @@ public class WeaponTest : MonoBehaviour
         if (reloadCheck == false && Time.time >= nextFireTime)
         {
             Shoot();
-            MuzzleEffect();
+            //MuzzleEffect();
+            MuzzlePaticle();
+
             nextFireTime = Time.time + data.fireRate;
         }
         
@@ -85,15 +88,11 @@ public class WeaponTest : MonoBehaviour
         po.SetActive(true);
         
     }
-    public void MuzzleEffect()
-    {
-        GameObject flashEffect = poolMuzzleEffect.GetFlash();
-        GameObject smokeEffect = poolMuzzleEffect.GetSmoke();
-        flashEffect.transform.position = muzzlePos.position;
-        smokeEffect.transform.position = muzzlePos.position;
-        StartCoroutine(CoMuzzleEffect(flashEffect,smokeEffect));
-    }
 
+    public void MuzzlePaticle()
+    {
+        particle.Play();
+    }
     public void Reload()
     {
         if (reloadCheck == true) return;
@@ -124,14 +123,12 @@ public class WeaponTest : MonoBehaviour
         yield return new WaitForSeconds(takeWeaponAniTime);
         canShoot = true;
     }
-    public IEnumerator CoMuzzleEffect(GameObject flash, GameObject smoke)
+    public IEnumerator CoMuzzleEffect(GameObject flash)
     {
         flash.SetActive(true);
-        smoke.SetActive(true);
 
         yield return new WaitForSeconds(1f);
         flash.SetActive(false);
-        smoke.SetActive(false);
     }
     public IEnumerator CoEffectSet(GameObject holes)
     {

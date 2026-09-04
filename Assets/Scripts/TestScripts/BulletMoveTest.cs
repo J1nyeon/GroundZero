@@ -13,6 +13,7 @@ public class BulletMoveTest : MonoBehaviour
     public Vector3 startPosition;
     public float maxDistance = 100f;
 
+    
     //public PoolingBulletHoles holesPool;
 
     public bool canMove = false;
@@ -52,10 +53,11 @@ public class BulletMoveTest : MonoBehaviour
 
         if (other.gameObject.CompareTag("Wall"))
         {
-            GameObject go = PoolingBulletHoles.instance.GetObjectBulletHoles();
-            go.transform.position = transform.position;
+            GameObject bulletHoles = PoolingBulletHoles.instance.GetObjectBulletHoles();
+            bulletHoles.transform.position = other.transform.position;
+           
             // 회전을 어떻게 해야하지 ?
-            StartCoroutine(CoHolesPool(go));
+            StartCoroutine(CoHolesPool(bulletHoles));
 
             Debug.Log("벽에 충돌");
             //canMove = false;
@@ -84,11 +86,11 @@ public class BulletMoveTest : MonoBehaviour
         rb.velocity = dir;
     }
 
-    public IEnumerator CoHolesPool(GameObject go)
+    public IEnumerator CoHolesPool(GameObject bulletHoles)
     {
-        go.SetActive(true);
+        bulletHoles.SetActive(true);
         yield return new WaitForSeconds(2f);
-        go.SetActive(false);
+        bulletHoles.SetActive(false);
     }
 
 }
