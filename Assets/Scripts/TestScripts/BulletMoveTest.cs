@@ -8,13 +8,9 @@ public class BulletMoveTest : MonoBehaviour
 
     private Rigidbody rb;
     public float bulletSpeed = 50f;
-    //public float bulletForce = 10f;
 
     public Vector3 startPosition;
     public float maxDistance = 100f;
-
-    
-    //public PoolingBulletHoles holesPool;
 
     public bool canMove = false;
 
@@ -54,12 +50,10 @@ public class BulletMoveTest : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             GameObject bulletHoles = PoolingBulletHoles.instance.GetObjectBulletHoles();
-            bulletHoles.transform.position = other.transform.position;
-           
+            bulletHoles.transform.position = transform.position;
+            bulletHoles.transform.LookAt(Camera.main.transform,Vector3.down);
+            bulletHoles.SetActive(true);
             // 회전을 어떻게 해야하지 ?
-            StartCoroutine(CoHolesPool(bulletHoles));
-
-            Debug.Log("벽에 충돌");
             //canMove = false;
             gameObject.SetActive(false);
         }
@@ -89,7 +83,7 @@ public class BulletMoveTest : MonoBehaviour
     public IEnumerator CoHolesPool(GameObject bulletHoles)
     {
         bulletHoles.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         bulletHoles.SetActive(false);
     }
 

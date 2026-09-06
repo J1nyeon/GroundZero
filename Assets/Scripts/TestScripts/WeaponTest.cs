@@ -123,13 +123,6 @@ public class WeaponTest : MonoBehaviour
         yield return new WaitForSeconds(takeWeaponAniTime);
         canShoot = true;
     }
-    public IEnumerator CoMuzzleEffect(GameObject flash)
-    {
-        flash.SetActive(true);
-
-        yield return new WaitForSeconds(1f);
-        flash.SetActive(false);
-    }
     public IEnumerator CoEffectSet(GameObject holes)
     {
         holes.SetActive(true);
