@@ -18,6 +18,8 @@ public class EnemyChaseState : BaseState
 
     public override void Do()
     {
+
+        fsm.EnemyDead(fsm.deadState);
         fsm.TargetRaycast();
         // 추격하다가
         if (fsm.targetPlayer != null)
@@ -38,6 +40,7 @@ public class EnemyChaseState : BaseState
         {
             fsm.ChangeState(fsm.patrolState);
         }
+        
     }
     public override void Exit()
     {

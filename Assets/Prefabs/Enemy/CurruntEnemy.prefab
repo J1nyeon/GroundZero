@@ -7459,7 +7459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397363682513941495}
   m_Layer: 0
-  m_Name: PatrolOne
+  m_Name: PatrolPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7474,7 +7474,7 @@ Transform:
   m_GameObject: {fileID: 4231282875993020766}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.86, y: 0, z: 1.91}
+  m_LocalPosition: {x: 6, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9510,7 +9510,6 @@ GameObject:
   - component: {fileID: 3329705853216813966}
   - component: {fileID: 3897510519788818348}
   - component: {fileID: 9007857513002221571}
-  - component: {fileID: 3650384093865298984}
   m_Layer: 0
   m_Name: CurruntEnemy
   m_TagString: Enemy
@@ -9572,9 +9571,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f690bebb575077e4a97f95a3eb7511b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 5dcfde135f42c134b8d2ea2a138b31ac, type: 2}
   agent: {fileID: 9007857513002221571}
+  EnemyHp: 0
+  hpSlider: {fileID: 1677596391609720215}
+  moveSpeed: 3
+  distance: 3
   targetPlayer: {fileID: 0}
-  enemyAngle: {fileID: 8191320861218615048}
   chaseRange: 9
   attackRange: 7
   longRange: 13
@@ -9583,6 +9586,9 @@ MonoBehaviour:
   - {fileID: 3047281467829776807}
   - {fileID: 397363682513941495}
   index: 0
+  patrolRotation: {fileID: 4116599537115494143}
+  vecRotation: {x: 0, y: 0, z: 0}
+  targetEuler: {x: 0, y: 0, z: 0}
   isBlocked: 0
   attackCheck: 0
   firePoint: {fileID: 5283050742454572557}
@@ -9620,30 +9626,6 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &3650384093865298984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6287930732690892145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c96e474b411143439cdc5274bd51bca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 5dcfde135f42c134b8d2ea2a138b31ac, type: 2}
-  EnemyHp: 0
-  hpSlider: {fileID: 1677596391609720215}
-  moveSpeed: 3
-  distance: 3
-  target: {fileID: 0}
-  viewRange: 0
-  viewAngle: 0
-  radius: 3
-  targetMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &6298239399127617593
 GameObject:
   m_ObjectHideFlags: 0

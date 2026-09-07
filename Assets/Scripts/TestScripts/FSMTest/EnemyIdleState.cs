@@ -17,6 +17,8 @@ public class EnemyIdleState : BaseState
 
     public override void Do()
     {
+
+        fsm.EnemyDead(fsm.deadState);
         // 1. 일정 범위에 들어오면 chase상태로 전환
         //float dis = Vector3.Distance(fsm.transform.position, fsm.targetPlayer.position);
 
@@ -28,6 +30,7 @@ public class EnemyIdleState : BaseState
         {
             fsm.ChangeState(fsm.chaseState);
         }
+       
     }
     
 }

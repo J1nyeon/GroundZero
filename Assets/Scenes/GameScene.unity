@@ -2592,12 +2592,6 @@ Transform:
   - {fileID: 543600233}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1090455410 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 397363682513941495, guid: 4183c859dc308b443942598940bf4f15,
-    type: 3}
-  m_PrefabInstance: {fileID: 4013636378051416920}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1236776583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3544,12 +3538,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4547181738184307297, guid: 6dbdc3443cdb84b41bcaffa9f7f235c6,
     type: 3}
   m_PrefabInstance: {fileID: 8077199143275421609}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1827035447 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4116599537115494143, guid: 4183c859dc308b443942598940bf4f15,
-    type: 3}
-  m_PrefabInstance: {fileID: 4013636378051416920}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &2048698738
 GameObject:
@@ -8239,16 +8227,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 397363682513941495, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 397363682513941495, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 1127240544877732453, guid: 4183c859dc308b443942598940bf4f15,
         type: 3}
       propertyPath: m_Camera
@@ -8304,11 +8282,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3650384093865298984, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 2617254341240031164}
     - target: {fileID: 3897510519788818348, guid: 4183c859dc308b443942598940bf4f15,
         type: 3}
       propertyPath: pool
@@ -8316,24 +8289,9 @@ PrefabInstance:
       objectReference: {fileID: 1487769030}
     - target: {fileID: 3897510519788818348, guid: 4183c859dc308b443942598940bf4f15,
         type: 3}
-      propertyPath: patrolPoint
-      value: 
-      objectReference: {fileID: 1090455410}
-    - target: {fileID: 3897510519788818348, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
       propertyPath: targetPlayer
       value: 
       objectReference: {fileID: 2617254341240031164}
-    - target: {fileID: 3897510519788818348, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
-      propertyPath: patrolRotation
-      value: 
-      objectReference: {fileID: 1827035447}
-    - target: {fileID: 4231282875993020766, guid: 4183c859dc308b443942598940bf4f15,
-        type: 3}
-      propertyPath: m_Name
-      value: PatrolPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 6287930732690892145, guid: 4183c859dc308b443942598940bf4f15,
         type: 3}
       propertyPath: m_Name

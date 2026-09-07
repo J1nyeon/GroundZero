@@ -45,6 +45,7 @@ public class EnemyStateTest : MonoBehaviour
         if (0 >= EnemyHp)
         {
             EnemyHp = 0f;
+            
             Debug.Log("Àû Ã³Ä¡");
         }
         HPUI();

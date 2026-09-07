@@ -20,6 +20,8 @@ public class EnemyAttackState : BaseState
 
     public override void Do()
     {
+
+        fsm.EnemyDead(fsm.deadState);
         // 1. 공격 
         // 정면으로 레이를 쐈을때 벽이면 추격상태로 전환
         fsm.TargetRaycast();
@@ -35,6 +37,7 @@ public class EnemyAttackState : BaseState
         {
             fsm.ChangeState(fsm.chaseState);
         }
+        
     }
     public override void Exit()
     {

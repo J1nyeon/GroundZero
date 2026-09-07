@@ -59,8 +59,8 @@ public class BulletMoveTest : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Enemy"))
         {
-            EnemyStateTest est = other.gameObject.GetComponent<EnemyStateTest>();
-            est.TakeDamage(data.currentShotDamage);
+            EnemyFSM enemyFSM = other.gameObject.GetComponent<EnemyFSM>();
+            enemyFSM.TakeDamage(data.currentShotDamage);
             Debug.Log("적과 충돌");
             //canMove = false;
             gameObject.SetActive(false);

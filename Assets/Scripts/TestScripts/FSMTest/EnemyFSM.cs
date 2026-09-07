@@ -1,24 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class EnemyFSM : MonoBehaviour
 {
-    [Header("State")]
+
+    public EnemyData data;
+
+    [Header("StateMachine")]
     public BaseState currentState;
     public EnemyIdleState idleState;
     public EnemyChaseState chaseState;
     public EnemyAttackState attackState;
     public EnemyPatrolState patrolState; // 아직 만들지않음.
+    public EnemyDeadState deadState;
 
     public NavMeshAgent agent;
 
+
+    [Header("State")]
+    public float EnemyHp;
+    public Slider hpSlider;
+
+    public float moveSpeed = 3f;
+    public float distance = 3f;
     public Transform targetPlayer;
-    
 
     [Header("Check Distance")]
     public float chaseRange = 10f;
@@ -33,16 +44,14 @@ public class EnemyFSM : MonoBehaviour
     public Vector3 vecRotation;
     public Vector3 targetEuler;
 
-
-
     [Header("Attack")]
     public bool isBlocked;
     public bool attackCheck = false;
     public Transform firePoint;
     public BulletPoolingTest pool;
     public LayerMask layer;
-    
 
+    [Header("Turn")]
     public float timer = 0;
     public float turnSpeed = 5f;
     public float targetDistance;
@@ -53,6 +62,7 @@ public class EnemyFSM : MonoBehaviour
     public bool isIdle = true;
     public bool isChase = false;
     public bool isPatrol;
+    public bool isDead = false;
 
     public void Start()
     {
@@ -62,8 +72,35 @@ public class EnemyFSM : MonoBehaviour
         chaseState = new EnemyChaseState(this);
         attackState = new EnemyAttackState(this);
         patrolState = new EnemyPatrolState(this);
+        deadState = new EnemyDeadState(this);
+
         currentState = idleState;
         ChangeState(currentState);
+
+        hpSlider.value = 1f;
+        if (data != null)
+        {
+            EnemyHp = data.enemyHp;
+        }
+    }
+
+    public void TakeDamage(float damage)
+    {
+        EnemyHp -= damage;
+        EnemyHp = Mathf.Clamp(EnemyHp, 0, data.enemyHp);
+
+        Debug.Log("현재 HP : " + EnemyHp);
+        if (0 >= EnemyHp)
+        {
+            EnemyHp = 0f;
+            isDead = true; 
+            Debug.Log("적 처치");
+        }
+        HPUI();
+    }
+    public void HPUI()
+    {
+        UIManager.instance.HpUI(hpSlider, EnemyHp, data.enemyHp);
     }
     public void ChangeState(BaseState nextState)
     {
@@ -79,11 +116,13 @@ public class EnemyFSM : MonoBehaviour
 
     public void Update()
     {
+        
         if (currentState == null) return;
         TargetDistance();
         currentState.Do();
         Debug.Log($"현재 상태 : {currentState}");
         StateEuler();
+        
     }
 
     public void Chase()
@@ -129,8 +168,7 @@ public class EnemyFSM : MonoBehaviour
         {
             index = (index + 1) % patrolWaypoint.Length;
             agent.SetDestination(patrolWaypoint[index].position);
-        }
-        
+        }   
     }
    
 
@@ -167,6 +205,20 @@ public class EnemyFSM : MonoBehaviour
             }
         }
     }
+
+    public IEnumerator CoEnemyDead()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.SetActive(false);
+    }
+    public void EnemyDead(BaseState state)
+    {
+        if (isDead == true)
+        {
+            ChangeState(state);
+            return;
+        }
+    }
    
     public void StateAnimation(bool idle, bool chase, bool attack, bool patrol)
     {
@@ -174,11 +226,13 @@ public class EnemyFSM : MonoBehaviour
         isChase = chase;
         isAttack = attack;
         isPatrol = patrol;
+        
 
         animator.SetBool("isIdle", idle);
         animator.SetBool("isChase", chase);
         animator.SetBool("isAttack", attack);
         animator.SetBool("isPatrol", patrol);
+        
     }
     public void OnDrawGizmos()
     {
