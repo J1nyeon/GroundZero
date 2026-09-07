@@ -11,8 +11,9 @@ public class EnemyAttackState : BaseState
     {
         fsm.timer = 0f; // 들어올때마다 초기화
         //fsm.canAttack = true; // 공격 가능상태로 전환
-        fsm.StateAnimation(false, false, true);
-
+        
+        fsm.StateAnimation(false, false, true, false);
+        
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();
     }
@@ -37,6 +38,8 @@ public class EnemyAttackState : BaseState
     }
     public override void Exit()
     {
+        
         //fsm.canAttack = false; // 벗어날때 다시 공격할 수 없는 상태로 전환
     }   
+    
 }

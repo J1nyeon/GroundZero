@@ -9,7 +9,7 @@ public class EnemyIdleState : BaseState
     public override void Enter() 
     {
         
-        fsm.StateAnimation(true, false, false);
+        fsm.StateAnimation(true, false, false, false);
 
         fsm.agent.isStopped = true;
         fsm.agent.ResetPath();

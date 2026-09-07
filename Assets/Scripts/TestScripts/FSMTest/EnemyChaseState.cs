@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class EnemyChaseState : BaseState
 {
@@ -10,8 +11,8 @@ public class EnemyChaseState : BaseState
     public override void Enter()
     {
         
-        fsm.StateAnimation(false, true, false);
-
+        fsm.StateAnimation(false, true, false, false);
+        
         fsm.agent.isStopped = false;
     }
 
@@ -35,9 +36,14 @@ public class EnemyChaseState : BaseState
         // 일단 idle상태로 해놓고 추후 수정
         if (fsm.targetDistance > fsm.longRange)
         {
-            fsm.ChangeState(fsm.idleState);
+            fsm.ChangeState(fsm.patrolState);
         }
     }
+    public override void Exit()
+    {
+        
+    }
+}
     // 문제 
     // 코너를 돌았을때 체이스상태인데도 추적하지않는 경우가 있음
     // ㄴ 거리 수치입력을 다시 해야하는 부분인거같아보임
@@ -46,4 +52,4 @@ public class EnemyChaseState : BaseState
     // 가끔 벽뒤에서 fsm.canAttack이 true가 될때가 있음 
     // ㄴ 벽에 딱 달라붙어 이동할 경우 그런것같아 보임
 
-}
+

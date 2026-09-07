@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public class EnemyFSM : MonoBehaviour
 {
@@ -16,6 +18,7 @@ public class EnemyFSM : MonoBehaviour
     public NavMeshAgent agent;
 
     public Transform targetPlayer;
+    
 
     [Header("Check Distance")]
     public float chaseRange = 10f;
@@ -26,6 +29,11 @@ public class EnemyFSM : MonoBehaviour
     [Header("Patrol")]
     public Transform[] patrolWaypoint;
     public int index;
+    public Transform patrolRotation;
+    public Vector3 vecRotation;
+    public Vector3 targetEuler;
+
+
 
     [Header("Attack")]
     public bool isBlocked;
@@ -44,9 +52,12 @@ public class EnemyFSM : MonoBehaviour
     public bool isAttack = false;
     public bool isIdle = true;
     public bool isChase = false;
+    public bool isPatrol;
 
     public void Start()
     {
+        vecRotation = patrolRotation.localEulerAngles;
+        Debug.Log($"d ? : {vecRotation}");
         idleState = new EnemyIdleState(this);
         chaseState = new EnemyChaseState(this);
         attackState = new EnemyAttackState(this);
@@ -62,7 +73,6 @@ public class EnemyFSM : MonoBehaviour
         {
             currentState.Exit();
         }
-        Debug.Log($"[State Change] {currentState?.GetType().Name} -> {nextState.GetType().Name}");
         currentState = nextState;
         currentState.Enter();
     }
@@ -73,6 +83,7 @@ public class EnemyFSM : MonoBehaviour
         TargetDistance();
         currentState.Do();
         Debug.Log($"현재 상태 : {currentState}");
+        StateEuler();
     }
 
     public void Chase()
@@ -89,6 +100,20 @@ public class EnemyFSM : MonoBehaviour
         float smoothMove = Time.deltaTime * turnSpeed;
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothMove);
     }
+
+    public void StateEuler()
+    {
+        if (currentState == patrolState)
+        {
+            targetEuler = Vector3.zero;
+        }
+        else
+        {
+            targetEuler = vecRotation;
+        }
+        float smoothMove = Time.deltaTime * turnSpeed;
+        patrolRotation.localRotation = Quaternion.Slerp(patrolRotation.localRotation, Quaternion.Euler(targetEuler), smoothMove);
+    }
     public void Attack()
     {
         timer += Time.deltaTime;
@@ -100,9 +125,12 @@ public class EnemyFSM : MonoBehaviour
     }
     public void Patrol()
     {
-        index = (index + 1) % patrolWaypoint.Length;
-        agent.SetDestination(patrolWaypoint[index].position);
-
+        if(agent.pathPending == false && agent.remainingDistance < 0.2f)
+        {
+            index = (index + 1) % patrolWaypoint.Length;
+            agent.SetDestination(patrolWaypoint[index].position);
+        }
+        
     }
    
 
@@ -137,19 +165,20 @@ public class EnemyFSM : MonoBehaviour
             {
                 isBlocked = true;
             }
-            
         }
     }
-    public void StateAnimation(bool idle, bool chase, bool attack)
+   
+    public void StateAnimation(bool idle, bool chase, bool attack, bool patrol)
     {
         isIdle = idle;
         isChase = chase;
         isAttack = attack;
+        isPatrol = patrol;
 
         animator.SetBool("isIdle", idle);
         animator.SetBool("isChase", chase);
         animator.SetBool("isAttack", attack);
-
+        animator.SetBool("isPatrol", patrol);
     }
     public void OnDrawGizmos()
     {
