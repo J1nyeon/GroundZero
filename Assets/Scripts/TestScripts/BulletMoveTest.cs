@@ -15,14 +15,18 @@ public class BulletMoveTest : MonoBehaviour
 
     public bool canMove = false;
 
+    [Header("HitRaycastSet")]
+    public GameObject pointGo;
+    public Vector3 hitPointVecPos;
+    public Vector3 hitPointVecRot;
     //public DecalProjector projector;
-
- 
+    
     public void Start()
     {
         startPosition = transform.position;
         canMove = true;
         rb = GetComponent<Rigidbody>();
+        
 
     }
 
@@ -44,6 +48,17 @@ public class BulletMoveTest : MonoBehaviour
             Debug.Log("최대거리에서 벗어남");
             gameObject.SetActive(false);
         }
+        BulletRaycast();
+    }
+
+    public void BulletRaycast()
+    {
+        if (Physics.Raycast(pointGo.transform.position, pointGo.transform.forward, out RaycastHit hit))
+        {
+            hitPointVecPos = hit.point;
+            hitPointVecRot = hit.normal; 
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -53,10 +68,11 @@ public class BulletMoveTest : MonoBehaviour
         if (other.gameObject.CompareTag("Wall"))
         {
             GameObject bulletHoles = PoolingBulletHoles.instance.GetObjectBulletHoles();
-            bulletHoles.transform.position = transform.position;
-            bulletHoles.transform.LookAt(Camera.main.transform);
+            bulletHoles.transform.position = hitPointVecPos;
+            bulletHoles.transform.rotation = Quaternion.LookRotation(hitPointVecRot);
             bulletHoles.SetActive(true);
-
+            //bulletHoles.transform.forward = hitPointVecRot;
+            //bulletHoles.transform.LookAt(Camera.main.transform);
             //projector.transform.LookAt(startPosition);
             gameObject.SetActive(false);
         }
