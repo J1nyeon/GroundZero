@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class BulletMoveTest : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class BulletMoveTest : MonoBehaviour
     public float maxDistance = 100f;
 
     public bool canMove = false;
+
+    //public DecalProjector projector;
 
  
     public void Start()
@@ -51,10 +54,10 @@ public class BulletMoveTest : MonoBehaviour
         {
             GameObject bulletHoles = PoolingBulletHoles.instance.GetObjectBulletHoles();
             bulletHoles.transform.position = transform.position;
-            bulletHoles.transform.LookAt(Camera.main.transform,Vector3.down);
+            bulletHoles.transform.LookAt(Camera.main.transform);
             bulletHoles.SetActive(true);
-            // 회전을 어떻게 해야하지 ?
-            //canMove = false;
+
+            //projector.transform.LookAt(startPosition);
             gameObject.SetActive(false);
         }
         if (other.gameObject.CompareTag("Enemy"))
@@ -74,17 +77,11 @@ public class BulletMoveTest : MonoBehaviour
     }
     public void BulletRbMove()
     {
-
         Vector3 dir = rb.transform.forward;
         dir *= bulletSpeed;
         rb.velocity = dir;
     }
 
-    public IEnumerator CoHolesPool(GameObject bulletHoles)
-    {
-        bulletHoles.SetActive(true);
-        yield return new WaitForSeconds(1f);
-        bulletHoles.SetActive(false);
-    }
+    
 
 }

@@ -65,14 +65,17 @@ public class WeaponTest : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance, layer))
         {
             targetPoint = hit.point;
-            //if (hit.collider.CompareTag("Wall"))
-            //{
-            //    GameObject holes = poolHoles.GetObjectBulletHoles();
-                
-            //    holes.transform.position = targetPoint;
-            //    holes.transform.rotation = Quaternion.LookRotation(hit.normal);
-            //    StartCoroutine(CoEffectSet(holes));
-            //}
+            if (hit.collider.CompareTag("Wall"))
+            {
+                //GameObject holes = poolHoles.GetObjectBulletHoles();
+
+                //holes.transform.position = targetPoint;
+                //holes.transform.rotation = Quaternion.LookRotation(hit.normal);
+                //StartCoroutine(CoEffectSet(holes));
+
+                // 벽을 감지하고 여기서 맞은곳의 좌표를 저장
+                //TargetPoint(targetPoint);
+            }
             Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);
         }
         else 
@@ -89,6 +92,11 @@ public class WeaponTest : MonoBehaviour
         
     }
 
+    public Vector3 TargetPoint(Vector3 targetPoints)
+    {
+        transform.position = targetPoints;
+        return transform.position;
+    }
     public void MuzzlePaticle()
     {
         particle.Play();

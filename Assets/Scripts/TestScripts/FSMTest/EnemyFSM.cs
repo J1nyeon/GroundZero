@@ -36,6 +36,7 @@ public class EnemyFSM : MonoBehaviour
     public float attackRange = 5f;
     public float longRange = 15f;
     public float detectRange = 12f;
+    public float targetDistance;
 
     [Header("Patrol")]
     public Transform[] patrolWaypoint;
@@ -50,11 +51,10 @@ public class EnemyFSM : MonoBehaviour
     public Transform firePoint;
     public BulletPoolingTest pool;
     public LayerMask layer;
+    public float timer = 0;
 
     [Header("Turn")]
-    public float timer = 0;
     public float turnSpeed = 5f;
-    public float targetDistance;
 
     [Header("Animation")]
     public Animator animator;
@@ -121,7 +121,7 @@ public class EnemyFSM : MonoBehaviour
         TargetDistance();
         currentState.Do();
         Debug.Log($"현재 상태 : {currentState}");
-        StateEuler();
+        StateAngle();
         
     }
 
@@ -140,7 +140,7 @@ public class EnemyFSM : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothMove);
     }
 
-    public void StateEuler()
+    public void StateAngle()
     {
         if (currentState == patrolState)
         {
@@ -231,8 +231,7 @@ public class EnemyFSM : MonoBehaviour
         animator.SetBool("isIdle", idle);
         animator.SetBool("isChase", chase);
         animator.SetBool("isAttack", attack);
-        animator.SetBool("isPatrol", patrol);
-        
+        animator.SetBool("isPatrol", patrol); 
     }
     public void OnDrawGizmos()
     {
