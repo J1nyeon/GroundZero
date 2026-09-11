@@ -12,6 +12,9 @@ public class WeaponData : ScriptableObject
     public float currentShotDamage;
     public float reloadTime;
     public float fireRate;
+    public float verticalRecoil;
+    public float horizontalRecoil;
+
     public int maxBullet;
 
 }

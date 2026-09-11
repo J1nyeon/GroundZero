@@ -17,4 +17,6 @@ MonoBehaviour:
   currentShotDamage: 30
   reloadTime: 2
   fireRate: 0.2
+  verticalRecoil: 2
+  horizontalRecoil: 1
   maxBullet: 30

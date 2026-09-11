@@ -9,6 +9,7 @@ public class WeaponTest : MonoBehaviour
     public WeaponData data;
     public BulletPoolingTest pool;
     public PoolingBulletHoles poolHoles;
+    public PlayerCameraController PlayerCC;
 
     public int bullet;
     public float currnetDamage;
@@ -16,6 +17,8 @@ public class WeaponTest : MonoBehaviour
     public float maxDistance = 100f;
     //public GameObject paticleMuzzleEffect;
     public ParticleSystem particle;
+
+    public Camera cam;
 
 
     public bool canShoot = true;
@@ -59,8 +62,6 @@ public class WeaponTest : MonoBehaviour
         bullet--;
         Debug.Log($"남은 탄약 개수 : {bullet}");
         Vector3 targetPoint;
-        Camera cam = Camera.main;
-
         
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance, layer))
         {
@@ -89,7 +90,8 @@ public class WeaponTest : MonoBehaviour
         po.transform.position = muzzlePos.position;
         po.transform.forward = dir;
         po.SetActive(true);
-        
+        PlayerCC.Recoil(data.verticalRecoil,data.horizontalRecoil);
+
     }
 
     public Vector3 TargetPoint(Vector3 targetPoints)
