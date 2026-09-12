@@ -30,7 +30,11 @@ public class EnemyAttackState : BaseState
             fsm.Detect();
         }
         fsm.Attack();
-        
+        // 애니메이션에서 총을 완전히 들고 나서 공격을 하게끔 하려면 어떻게 해야할까 ?
+        // 총을 완전히 드는 애니메이션 진입시간을 확인하여 bool변수를 넣고 true일 경우 Attack함수 호출?
+        // 그리고 여기서 체이스 스테이트가 아닌 다른 상태로 들어갈때 다시 false를 넣어주면 될까 ?
+
+
 
         // 2. 공격 범위에서 벗어나면거나 물체에 막혀있어 공격 할 수가 없는 경우 추격 Chase상태로 전환
         if (fsm.targetDistance > fsm.attackRange || fsm.isBlocked == true)
