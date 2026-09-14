@@ -35,6 +35,10 @@ public class EnemyStateTest : MonoBehaviour
             EnemyHp = data.enemyHp;       
         }
     }
+    public void Update()
+    {
+        HPUI();
+    }
 
     public void TakeDamage(float damage)
     {
@@ -48,7 +52,7 @@ public class EnemyStateTest : MonoBehaviour
             
             Debug.Log("Àû Ã³Ä¡");
         }
-        HPUI();
+        //HPUI();
     }
     public void HPUI()
     {

@@ -20,6 +20,8 @@ public class BulletMoveTest : MonoBehaviour
     public Vector3 hitPointVecPos;
     public Vector3 hitPointVecRot;
     //public DecalProjector projector;
+
+
     
     public void Start()
     {
@@ -81,6 +83,7 @@ public class BulletMoveTest : MonoBehaviour
             EnemyFSM enemyFSM = other.gameObject.GetComponent<EnemyFSM>();
             enemyFSM.TakeDamage(data.currentShotDamage);
             Debug.Log("적과 충돌");
+            
             //canMove = false;
             gameObject.SetActive(false);
         }

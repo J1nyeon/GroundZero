@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     {
         if (slider != null)
         {
-            slider.value = currentHp / maxHp;
+            slider.value = Mathf.Lerp(slider.value, currentHp / maxHp, Time.deltaTime * 5f);
         }
     }
 

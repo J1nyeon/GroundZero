@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: -4618987252797017648}
   m_Layer: 10
   m_Name: 5mm BulletTest
-  m_TagString: Untagged
+  m_TagString: PlayerRifleBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,8 @@ MonoBehaviour:
   maxDistance: 100
   canMove: 0
   pointGo: {fileID: 1106159888837320212}
-  hitPointVec: {x: 0, y: 0, z: 0}
+  hitPointVecPos: {x: 0, y: 0, z: 0}
+  hitPointVecRot: {x: 0, y: 0, z: 0}
 --- !u!54 &-4618987252797017648
 Rigidbody:
   m_ObjectHideFlags: 0

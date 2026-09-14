@@ -1,6 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class PlayerMove : MonoBehaviour
     public float jumpForce = 5f;
     private bool isJumping = false;
     public bool isGrounded;
+
+    //public CinemachineImpulseSource CI;
+    //public float cameraShake = 0.02f;
 
 
     void Start()
@@ -78,4 +83,9 @@ public class PlayerMove : MonoBehaviour
             Move();
         }  
     }
+
+    //public void CameraMove()
+    //{
+    //    CI.GenerateImpulse(cameraShake);
+    //}
 }

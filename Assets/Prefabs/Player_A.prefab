@@ -2717,11 +2717,13 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 4165f506da20caa4b8ccf3d9740cca53, type: 2}
   pool: {fileID: 0}
   poolHoles: {fileID: 0}
-  poolMuzzleEffect: {fileID: 0}
+  PlayerCC: {fileID: 0}
   bullet: 0
   currnetDamage: 0
   muzzlePos: {fileID: 5808810512871910083}
   maxDistance: 100
+  particle: {fileID: 0}
+  cam: {fileID: 0}
   canShoot: 1
   nextFireTime: 0
   reloadCheck: 0

@@ -91,7 +91,6 @@ public class WeaponTest : MonoBehaviour
         po.transform.forward = dir;
         po.SetActive(true);
         PlayerCC.Recoil(data.verticalRecoil,data.horizontalRecoil);
-
     }
 
     public Vector3 TargetPoint(Vector3 targetPoints)

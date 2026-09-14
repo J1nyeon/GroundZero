@@ -13,9 +13,13 @@ public class PlayerState : MonoBehaviour
     private void Start()
     {
         hpSlider.value = 1f;
-        currentHp = maxHp;        
+        currentHp = maxHp;      
     }
-   
+    public void Update()
+    {
+        UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
+    }
+
     public void TakeDamage(float damage)
     {
         currentHp = Mathf.Clamp(currentHp, 0, maxHp);
@@ -26,6 +30,6 @@ public class PlayerState : MonoBehaviour
             currentHp = 0f;
             UIManager.instance.Lose();
         }
-        UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
+        //UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
     }
 }

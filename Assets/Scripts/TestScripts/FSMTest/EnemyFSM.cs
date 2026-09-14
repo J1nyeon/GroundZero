@@ -64,6 +64,9 @@ public class EnemyFSM : MonoBehaviour
     public bool isPatrol;
     public bool isDead = false;
 
+    public ParticleSystem bloodEffect;
+    public ParticleSystem bloodEffect2;
+
     public void Start()
     {
         vecRotation = patrolRotation.localEulerAngles;
@@ -84,6 +87,11 @@ public class EnemyFSM : MonoBehaviour
         }
     }
 
+    public void BloodEF()
+    {
+        bloodEffect.Play();
+        bloodEffect2.Play();
+    }
     public void TakeDamage(float damage)
     {
         EnemyHp -= damage;
@@ -96,7 +104,7 @@ public class EnemyFSM : MonoBehaviour
             isDead = true; 
             Debug.Log("Àû Ã³Ä¡");
         }
-        HPUI();
+        //HPUI();
     }
     public void HPUI()
     {
@@ -116,7 +124,7 @@ public class EnemyFSM : MonoBehaviour
 
     public void Update()
     {
-        
+        HPUI();
         if (currentState == null) return;
         TargetDistance();
         currentState.Do();
@@ -170,8 +178,6 @@ public class EnemyFSM : MonoBehaviour
             agent.SetDestination(patrolWaypoint[index].position);
         }   
     }
-   
-
     public void BulletSpawn()
     {
         GameObject bullet = pool.GetBullet();
@@ -238,6 +244,18 @@ public class EnemyFSM : MonoBehaviour
         Gizmos.color = new Color(0f, 1f, 0f);
         //Gizmos.DrawSphere(transform.position, chaseRange);
         //Gizmos.DrawLine(transform.position, targetPlayer.position);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("PlayerRifleBullet"))
+        {
+            bloodEffect.transform.position = other.transform.position;
+
+            bloodEffect2.transform.position = other.transform.position;
+
+            BloodEF();
+        }
     }
 
 }
