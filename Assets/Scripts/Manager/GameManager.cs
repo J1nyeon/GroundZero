@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public float time;
+    public float time = 300;
+    public int hour;
     public int minute;
     public int second;
     public TextMeshProUGUI timerText;
@@ -23,7 +24,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time -= Time.deltaTime;
         if (Time.timeScale == 1)
         {
             RealTime();
@@ -44,17 +45,18 @@ public class GameManager : MonoBehaviour
 
     public void RealTime()
     {
+        hour = 0;
         minute = (int)(time / 60);
         second = (int)(time % 60);
-        timerText.text = $"{minute : 00} :{second : 00}";
+        timerText.text = $"{hour : 0} :{minute : 00} :{second : 00}";
     }
 
     public void TimeOver()
     {
-        if (minute == 1)
+        if (second == 0)
         {
             UIManager.instance.Lose();
-            timerText.text = $"{minute: 00} :{00 : 00}";
+            //timerText.text = $"{minute: 00} :{00 : 00}";
         }
     }
 }

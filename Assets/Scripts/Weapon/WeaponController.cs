@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class WeaponController : MonoBehaviour
 {
     //public Weapon_ weapon;
-
+    public PlayerMove player;
 
     public WeaponTest test;
     public Animator animator;
@@ -18,9 +18,10 @@ public class WeaponController : MonoBehaviour
 
     public void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0) && player.canShoot == true) 
         {
             test.Fire();
+
             //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //if (Physics.Raycast(pos,Vector3.forward,out RaycastHit hit,100f))
             //{

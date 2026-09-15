@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
 
     //public CinemachineImpulseSource CI;
     //public float cameraShake = 0.02f;
-
+    public bool canShoot = true;
 
     void Start()
     {
@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(Vector3.up * jumpForce ,ForceMode.Impulse);
         isGrounded = false;
+        canShoot = false; // 점프중일경우엔 총을 쏠 수 없음.
     }
     // Update is called once per frame
     void Update()
@@ -48,7 +49,11 @@ public class PlayerMove : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
 
-        
+        //if (isGrounded == true)
+        //{
+            
+        //}
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
             applySpeed = sprintSpeed;
@@ -68,6 +73,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.CompareTag("Grounded"))
         {
             isGrounded = true;
+            canShoot = true;
             //Debug.Log("점프 가능");
         }
     }

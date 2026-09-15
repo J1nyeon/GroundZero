@@ -255,6 +255,9 @@ public class EnemyFSM : MonoBehaviour
             bloodEffect2.transform.position = other.transform.position;
 
             BloodEF();
+
+            chaseRange = 30f;
+            longRange = 40f;
         }
     }
 
