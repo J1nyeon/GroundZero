@@ -9,10 +9,19 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
 
+    [Header("EscapeUI")]
+    public Image escapeUI;
+    public Image escapeTimerUI;
+    public TextMeshProUGUI escapeTimerTxt;
+    public bool escapeUICheck = false;
+
     [Header("Win & Lose")]
     public TextMeshProUGUI txtUI;
     public GameObject winOrLose;
     public Image fadeOverlay;
+
+
+
 
     public void Awake()
     {
@@ -28,6 +37,27 @@ public class UIManager : MonoBehaviour
         {
             slider.value = Mathf.Lerp(slider.value, currentHp / maxHp, Time.deltaTime * 5f);
         }
+    }
+
+    public void EscapeTimerUI(float timer)
+    {
+        int sec = (int)timer;
+        int milsec = (int)((timer % 1) * 100);
+        escapeTimerTxt.text = $"{sec:00}:{milsec:00}";
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T) && escapeUICheck == false)
+        {
+            escapeUICheck = true;
+            DGEscapeUI();
+        }
+    }
+
+    public void DGEscapeUI()
+    {
+        StartCoroutine(CoEscapeDOTween());
     }
 
     public void DoGameOverOrWin()
@@ -69,5 +99,12 @@ public class UIManager : MonoBehaviour
         }
     }
     
+    public IEnumerator CoEscapeDOTween()
+    {
+        escapeUI.transform.DOLocalMoveX(398f, 1.0f);
+        yield return new WaitForSeconds(2f);
+        escapeUI.transform.DOLocalMoveX(688f, 1.0f);
+        escapeUICheck = false;
+    }
 
 }
