@@ -4434,7 +4434,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 40, y: 0}
-  m_SizeDelta: {x: 70, y: 30}
+  m_SizeDelta: {x: 100, y: 30}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1441073381
 MonoBehaviour:
@@ -4456,10 +4456,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD0C8\uCD9C\uAD6C \uBAA9\uB85D"
+  m_text: DataFail
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0b3ad713adfbf94c8e3a9bcef17ea6c, type: 2}
-  m_sharedMaterial: {fileID: 5380657954803251726, guid: f0b3ad713adfbf94c8e3a9bcef17ea6c,
+  m_fontAsset: {fileID: 11400000, guid: 7a87add8b9e127f498e61e6dcf3016f5, type: 2}
+  m_sharedMaterial: {fileID: -8779633976884427443, guid: 7a87add8b9e127f498e61e6dcf3016f5,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
