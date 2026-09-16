@@ -1,0 +1,313 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\USER\\UnityProject\\GroundZero\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|c:\\users\\user\\unityproject\\groundzero\\assets\\scripts\\manager\\sfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\sfxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\fsmtest\\enemyfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\fsmtest\\enemyfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\enemystatetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\enemystatetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\weapontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\weapontest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\player\\playercameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playercameracontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\weapon\\weaponcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weapon\\weaponcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\player\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\bulletmovetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\bulletmovetest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\testenemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\testenemybullet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\gamescenescripts\\gamesceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamescenescripts\\gamesceneloader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\fsmtest\\enemychasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\fsmtest\\enemychasestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\fsmtest\\enemyidlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\fsmtest\\enemyidlestate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\fsmtest\\enemyattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\fsmtest\\enemyattackstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\db\\weapondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\db\\weapondata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|C:\\Users\\USER\\UnityProject\\GroundZero\\assets\\scripts\\testscripts\\fsmtest\\enemydeadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0112365E-DC0B-EF39-C2AB-1FB46B50F7B3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\testscripts\\fsmtest\\enemydeadstate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SFXManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\SFXManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SFXManager.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\SFXManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\SFXManager.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAgwAYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T18:48:01.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameSceneLoader.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\GameSceneScripts\\GameSceneLoader.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameSceneScripts\\GameSceneLoader.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\GameSceneScripts\\GameSceneLoader.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameSceneScripts\\GameSceneLoader.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T16:26:32.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyStateTest.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\EnemyStateTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\EnemyStateTest.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\EnemyStateTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\EnemyStateTest.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAADwvzQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T14:05:47.402Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PlayerState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerState.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerState.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvxMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T14:05:35.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-13T18:04:15.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EnemyFSM.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyFSM.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyFSM.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyFSM.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyFSM.cs",
+              "ViewState": "AgIAAPEAAAAAAAAAAAAywP4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T21:20:07.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerMove.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerMove.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMove.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerMove.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMove.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAADwvxcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-12T21:12:45.023Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "BulletMoveTest.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\BulletMoveTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\BulletMoveTest.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\BulletMoveTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\BulletMoveTest.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAIwFUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-06T15:36:17.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestEnemyBullet.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\TestEnemyBullet.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\TestEnemyBullet.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\TestEnemyBullet.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\TestEnemyBullet.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-06T15:36:02.907Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeaponController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Weapon\\WeaponController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Weapon\\WeaponController.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Weapon\\WeaponController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Weapon\\WeaponController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAuwBMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-27T18:39:20.475Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeaponTest.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\WeaponTest.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\WeaponTest.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\WeaponTest.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\WeaponTest.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAUwFQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-28T10:27:56.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PlayerCameraController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerCameraController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerCameraController.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Player\\PlayerCameraController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerCameraController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAkwCsAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-08-30T14:30:26.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GameManager.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\Manager\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\GameManager.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwDgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-13T17:29:33.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "EnemyChaseState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyChaseState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyChaseState.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyChaseState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyChaseState.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwCoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T21:22:46.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "EnemyAttackState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyAttackState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyAttackState.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyAttackState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyAttackState.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACEAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T21:23:51.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "EnemyIdleState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyIdleState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyIdleState.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyIdleState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyIdleState.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAIwBQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-02T21:19:46.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WeaponData.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\DB\\WeaponData.cs",
+              "RelativeDocumentMoniker": "Assets\\DB\\WeaponData.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\DB\\WeaponData.cs",
+              "RelativeToolTip": "Assets\\DB\\WeaponData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-10T22:28:30.777Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "EnemyDeadState.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyDeadState.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyDeadState.cs",
+              "ToolTip": "C:\\Users\\USER\\UnityProject\\GroundZero\\Assets\\Scripts\\TestScripts\\FSMTest\\EnemyDeadState.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TestScripts\\FSMTest\\EnemyDeadState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-07T21:11:44.383Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

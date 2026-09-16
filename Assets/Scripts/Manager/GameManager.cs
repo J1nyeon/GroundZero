@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
         hour = 0;
         minute = (int)(time / 60);
         second = (int)(time % 60);
-        timerText.text = $"{hour : 0} :{minute : 00} :{second : 00}";
+        timerText.text = $"{hour:0}:{minute:00}:{second:00}";
     }
 
     public void TimeOver()
