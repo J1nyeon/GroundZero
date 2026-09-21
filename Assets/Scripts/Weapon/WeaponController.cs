@@ -22,11 +22,8 @@ public class WeaponController : MonoBehaviour
         {
             test.Fire();
 
-            //Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //if (Physics.Raycast(pos,Vector3.forward,out RaycastHit hit,100f))
-            //{
-            //    Debug.Log(hit.collider.name);
-            //}
+            
+
             //weapon.Fire();
         }
        
