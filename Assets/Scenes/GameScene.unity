@@ -997,6 +997,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitGO: {fileID: 0}
+  characterSellect: {fileID: 0}
+  mapSellect: {fileID: 0}
   loadingScene: LoadingScene
   settingScene: SettingScene
   gameScene: GameScene

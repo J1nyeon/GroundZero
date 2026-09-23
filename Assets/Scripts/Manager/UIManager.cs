@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
     [Header("Win & Lose")]
     public TextMeshProUGUI txtUI;
     public GameObject winOrLose;
-    public Image fadeOverlay;
+    public Image fadeOverl ay;
 
 
 

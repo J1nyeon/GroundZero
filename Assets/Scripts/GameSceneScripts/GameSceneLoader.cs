@@ -9,6 +9,7 @@ public class GameSceneLoader : MonoBehaviour
 
     public GameObject exitGO;
     public GameObject characterSellect;
+    public GameObject mapSellect;
     public string loadingScene = "LoadingScene";
     public string settingScene = "SettingScene";
     public string gameScene = "GameScene";
@@ -62,6 +63,19 @@ public class GameSceneLoader : MonoBehaviour
     {
         characterSellect.SetActive(false);
     }
+
+    public void OnClickMapSellect()
+    {
+        mapSellect.SetActive(true);
+        characterSellect.SetActive(false);
+    }
+
+    public void OnClickMapSellectExit()
+    {
+        mapSellect.SetActive(false);
+        characterSellect.SetActive(true);
+    }
+
 
 
 }

@@ -8,8 +8,8 @@ public class PlayerManager : MonoBehaviour
 {
     public bool interaction = false;
     public GameObject exitPoint;
-    public GameObject goInteraction;
-    public Image interactionUI;
+    //public GameObject goInteraction;
+    //public Image interactionUI;
     public TextMeshProUGUI txtInteraction;
 
     //public bool escapeUICheck = false;
@@ -33,7 +33,7 @@ public class PlayerManager : MonoBehaviour
         UIManager.instance.EscapeTimerUI(countDownTimer);
         if (interaction == true)
         {
-            goInteraction.SetActive(true);
+            //goInteraction.SetActive(true);
             obEscapeUI.SetActive(true);
             countDownTimer -= Time.deltaTime;
             if(countDownTimer<= 0)
@@ -49,7 +49,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            goInteraction.SetActive(false);
+            //goInteraction.SetActive(false);
             obEscapeUI.SetActive(false);
             countDownTimer = escapeTimer;
         }
