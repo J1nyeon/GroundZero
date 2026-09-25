@@ -18,10 +18,7 @@ public class UIManager : MonoBehaviour
     [Header("Win & Lose")]
     public TextMeshProUGUI txtUI;
     public GameObject winOrLose;
-    public Image fadeOverl ay;
-
-
-
+    public Image fadeOverlay;
 
     public void Awake()
     {
@@ -73,7 +70,7 @@ public class UIManager : MonoBehaviour
             txtUI.color = Color.cyan;
             DoGameOverOrWin();
         }
-        CursorOn();
+        CursorManager.instance.CursorOn();
     }
     public void Lose()
     {
@@ -83,13 +80,9 @@ public class UIManager : MonoBehaviour
             txtUI.color = Color.cyan;
             DoGameOverOrWin();
         }
-        CursorOn();
+        CursorManager.instance.CursorOn();
     }
-    public void CursorOn()
-    {
-        Cursor.lockState = CursorLockMode.Confined; // 커서 윈도우 안에 가두기
-        Cursor.visible = true; // 커서 키기
-    }
+    
     public void ShowResultUI()
     {
         Time.timeScale = 0f;
