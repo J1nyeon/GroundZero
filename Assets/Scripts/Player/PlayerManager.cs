@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -18,7 +20,16 @@ public class PlayerManager : MonoBehaviour
     public float escapeTimer = 10f;
     public GameObject obEscapeUI;
     public bool countDownCheck = false;
-    
+
+    public GameObject inventoryTab;
+    public bool isCursorVisible = true;
+    public bool isLocked = true;
+    public PlayerCameraController PCC;
+    public WeaponController WC;
+
+    public GameObject escImage;
+
+
 
     public void Start()
     {
@@ -53,6 +64,49 @@ public class PlayerManager : MonoBehaviour
             obEscapeUI.SetActive(false);
             countDownTimer = escapeTimer;
         }
+
+        if(Input.GetKeyDown(KeyCode.Tab))
+        {
+            //CursorManager.instance.isCursorVisible = !CursorManager.instance.isCursorVisible;
+            inventoryTab.SetActive(!inventoryTab.activeSelf);
+            
+            //Cursor.visible = !CursorManager.instance.isCursorVisible;
+            CursorLockChange();
+        }
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            escImage.SetActive(!escImage.activeSelf);
+            CursorLockChange();
+        }
+    }
+
+    public void CursorLockChange()
+    {
+        isCursorVisible = !isCursorVisible;
+        Cursor.visible = !isCursorVisible;
+        if (isLocked == true)
+        {
+            CursorUnLock();
+            PCC.enabled = false;
+            WC.enabled = false;
+        }
+        else
+        {
+            CursorLock();
+            PCC.enabled = true;
+            WC.enabled = true;
+        }
+    }
+    public void CursorLock()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        isLocked = true;
+    }
+
+    public void CursorUnLock()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        isLocked = false;
     }
 
     private void OnTriggerEnter(Collider other)

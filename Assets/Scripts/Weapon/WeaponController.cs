@@ -21,9 +21,6 @@ public class WeaponController : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0) && player.canShoot == true) 
         {
             test.Fire();
-
-            
-
             //weapon.Fire();
         }
        

@@ -6,6 +6,7 @@ public class CursorManager : MonoBehaviour
 {
     public static CursorManager instance;
 
+    public bool isCursorVisible = true;
     public void Awake()
     {
         if(instance == null)
@@ -22,6 +23,6 @@ public class CursorManager : MonoBehaviour
     public void CursorOn()
     {
         Cursor.lockState = CursorLockMode.Confined; // 커서 윈도우 안에 가두기
-        Cursor.visible = true; // 커서 키기
+        Cursor.visible = isCursorVisible; // 커서 키기
     }
 }
