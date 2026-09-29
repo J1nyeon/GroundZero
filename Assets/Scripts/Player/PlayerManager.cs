@@ -22,8 +22,6 @@ public class PlayerManager : MonoBehaviour
     public bool countDownCheck = false;
 
     public GameObject inventoryTab;
-    public bool isCursorVisible = true;
-    public bool isLocked = true;
     public PlayerCameraController PCC;
     public WeaponController WC;
 
@@ -67,46 +65,53 @@ public class PlayerManager : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Tab))
         {
-            //CursorManager.instance.isCursorVisible = !CursorManager.instance.isCursorVisible;
-            inventoryTab.SetActive(!inventoryTab.activeSelf);
-            
-            //Cursor.visible = !CursorManager.instance.isCursorVisible;
-            CursorLockChange();
+            StateChage(inventoryTab);
         }
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            escImage.SetActive(!escImage.activeSelf);
-            CursorLockChange();
+            StateChage(escImage);
+            //if (escImage.activeSelf == true)
+            //{
+            //    escImage.SetActive(false);
+            //    CursorLockChange(true);
+            //}
+            //else
+            //{
+            //    escImage.SetActive(true);
+            //    CursorLockChange(false);
+            //}
         }
     }
 
-    public void CursorLockChange()
+    public void StateChage(GameObject State)
     {
-        isCursorVisible = !isCursorVisible;
-        Cursor.visible = !isCursorVisible;
-        if (isLocked == true)
+        //State.SetActive(!State.activeSelf);
+        //CursorLockChange(State.activeSelf);
+        if (State.activeSelf == true)
         {
-            CursorUnLock();
-            PCC.enabled = false;
-            WC.enabled = false;
+            State.SetActive(false);
+            CursorLockChange(true);
         }
         else
         {
-            CursorLock();
-            PCC.enabled = true;
-            WC.enabled = true;
+            State.SetActive(true);
+            CursorLockChange(false);
         }
     }
-    public void CursorLock()
-    {
-        Cursor.lockState = CursorLockMode.Locked;
-        isLocked = true;
-    }
 
-    public void CursorUnLock()
+    public void CursorLockChange(bool isLock)
     {
-        Cursor.lockState = CursorLockMode.None;
-        isLocked = false;
+        Cursor.visible = !isLock;
+        if(isLock == true)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        PCC.enabled = isLock;
+        WC.enabled = isLock;
     }
 
     private void OnTriggerEnter(Collider other)

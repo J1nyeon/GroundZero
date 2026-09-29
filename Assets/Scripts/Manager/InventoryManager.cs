@@ -14,11 +14,31 @@ public class InventoryManager : MonoBehaviour
     public GameObject leftSet;
     public GameObject rightSet;
 
-   
+
+    public List<Button> inventoryImgBT = new List<Button>();
+
+    public List<GameObject> inventoryImg = new List<GameObject>();
 
 
-    
-    public void OnClickInvenBT()
+    public void Update()
+    {
+
+    }
+
+    public void InventorySellect()
+    {
+        for (int i = 0; i < inventoryImgBT.Count; i++)
+        {
+            for (int j = 0; j < inventoryImg.Count; j++)
+            {
+
+            }
+        }
+
+    }
+
+
+public void OnClickInvenBT()
     {
         healthCondition.SetActive(false);
         inven.SetActive(true);
