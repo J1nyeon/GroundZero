@@ -17,7 +17,7 @@ public class InventoryManager : MonoBehaviour
 
     public List<Button> inventoryImgBT = new List<Button>();
 
-    public List<GameObject> inventoryImg = new List<GameObject>();
+    public List<GameObject> listInventoryImg = new List<GameObject>();
 
 
     public void Update()
@@ -25,14 +25,11 @@ public class InventoryManager : MonoBehaviour
 
     }
 
-    public void InventorySellect()
+    public void InventorySellect(int ActiveIndexNumber)
     {
-        for (int i = 0; i < inventoryImgBT.Count; i++)
+        for (int i = 0; i < listInventoryImg.Count; i++)
         {
-            for (int j = 0; j < inventoryImg.Count; j++)
-            {
-
-            }
+            
         }
 
     }
@@ -44,6 +41,7 @@ public void OnClickInvenBT()
         inven.SetActive(true);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
+        listInventoryImg[1].SetActive(true);
     }
     public void OnClickHealthBT()
     {
@@ -51,6 +49,8 @@ public void OnClickInvenBT()
         inven.SetActive(false);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
+        listInventoryImg[2].SetActive(true);
+
     }
 
     public void OnClickBT()
