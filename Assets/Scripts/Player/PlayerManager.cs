@@ -27,33 +27,32 @@ public class PlayerManager : MonoBehaviour
 
     public GameObject escImage;
 
-
+    public bool hasTriggeredEnding = false;
 
     public void Start()
     {
         countDownTimer = escapeTimer;
+        hasTriggeredEnding = false;
     }
 
     private void Update()
     {
         //ExitDistanse();
         
-        Debug.Log($"interaction ป๓ลย : {interaction}");
         UIManager.instance.EscapeTimerUI(countDownTimer);
         if (interaction == true)
         {
             //goInteraction.SetActive(true);
             obEscapeUI.SetActive(true);
             countDownTimer -= Time.deltaTime;
-            if(countDownTimer<= 0)
+            if(countDownTimer<= 0 )
             {
                 countDownTimer = 0f;
-                UIManager.instance.Win();
-            }
-            
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                UIManager.instance.Win();
+                if (hasTriggeredEnding == false)
+                {
+                    hasTriggeredEnding = true;
+                    UIManager.instance.Win();
+                }
             }
         }
         else
@@ -142,5 +141,6 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+    
 
 }

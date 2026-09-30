@@ -30,7 +30,7 @@ public class LoadingSceneLoader : MonoBehaviour
     {
         StartCoroutine(CoSceneLoader(gameScene));
     }
-
+    
     public IEnumerator CoSceneLoader(string SceneName)
     {
         AsyncOperation ao = SceneManager.LoadSceneAsync(SceneName);

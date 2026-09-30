@@ -16,16 +16,17 @@ public class UIManager : MonoBehaviour
     public bool escapeUICheck = false;
 
     [Header("Win & Lose")]
-    public TextMeshProUGUI txtUI;
+    //public TextMeshProUGUI txtUI;
     public GameObject winOrLose;
     public Image fadeOverlay;
+
 
     public void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
     }
     public void HpUI(Slider slider, float currentHp, float maxHp)
@@ -59,37 +60,38 @@ public class UIManager : MonoBehaviour
 
     public void DoGameOverOrWin()
     {
-        fadeOverlay.DOFade(0.5f, 1.0f).SetEase(Ease.OutQuad).OnComplete(ShowResultUI);
+        if (fadeOverlay != null)
+        {
+            fadeOverlay.gameObject.SetActive(true);
+            fadeOverlay.DOFade(1, 1f).SetEase(Ease.OutQuad).OnComplete(ShowResultUI);
+        }
         
     }
     public void Win()
     {
-        if(txtUI != null)
-        {
-            txtUI.text = "You Win";
-            txtUI.color = Color.cyan;
-            DoGameOverOrWin();
-        }
-        CursorManager.instance.CursorOn();
+        DoGameOverOrWin();
+        //StartCoroutine(CoVictoryEndingSceneLoder());
     }
     public void Lose()
     {
-        if (txtUI != null)
-        {
-            txtUI.text = "You Lose";
-            txtUI.color = Color.cyan;
-            DoGameOverOrWin();
-        }
-        CursorManager.instance.CursorOn();
+        //if (txtUI != null)
+        //{
+        //    txtUI.text = "You Lose";
+        //    txtUI.color = Color.cyan;
+        //    DoGameOverOrWin();
+        //}
+        
     }
     
     public void ShowResultUI()
     {
-        Time.timeScale = 0f;
-        if (winOrLose != null)
-        {
-            winOrLose.SetActive(true);
-        }
+        //Time.timeScale = 0f;
+        
+        GameSceneLoader.instance.EndingSceneLoader();
+        //if (winOrLose != null)
+        //{
+        //    winOrLose.SetActive(true);
+        //}
     }
     
     public IEnumerator CoEscapeDOTween()
@@ -98,6 +100,15 @@ public class UIManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         escapeUI.transform.DOLocalMoveX(688f, 1.0f);
         escapeUICheck = false;
+    }
+
+    public IEnumerator CoVictoryEndingSceneLoder()
+    {
+        DoGameOverOrWin();
+
+        yield return new WaitForSeconds(3f);
+
+        
     }
 
 }

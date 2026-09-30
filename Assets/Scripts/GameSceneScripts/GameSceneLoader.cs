@@ -16,6 +16,7 @@ public class GameSceneLoader : MonoBehaviour
     public string settingScene = "SettingScene";
     public string gameScene = "GameScene";
     public string tittleScene = "TittleScene";
+    public string victoryEndingScene = "VictoryEndingScene";
 
     public void Awake()
     {
@@ -38,7 +39,11 @@ public class GameSceneLoader : MonoBehaviour
         SceneManager.LoadScene(gameScene);
         CursorManager.instance.CursorOn();
     }
-
+    public void EndingSceneLoader()
+    {
+        SceneManager.LoadScene(victoryEndingScene);
+    }
+    
     public void OnClickLoadingScene()
     {
         SceneManager.LoadScene(loadingScene);

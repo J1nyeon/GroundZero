@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerMove : MonoBehaviour
     //public CinemachineImpulseSource CI;
     //public float cameraShake = 0.02f;
     public bool canShoot = true;
+    public GameObject characterUI;
 
     void Start()
     {
@@ -49,10 +51,10 @@ public class PlayerMove : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
 
-        //if (isGrounded == true)
-        //{
-            
-        //}
+
+        bool isMove = rb.velocity.magnitude > 1f;
+
+        characterUI.SetActive(isMove);
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -87,11 +89,7 @@ public class PlayerMove : MonoBehaviour
         if (isGrounded == true)
         {
             Move();
-        }  
+        }
     }
-
-    //public void CameraMove()
-    //{
-    //    CI.GenerateImpulse(cameraShake);
-    //}
+  
 }

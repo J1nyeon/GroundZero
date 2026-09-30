@@ -30,17 +30,6 @@ public class GameManager : MonoBehaviour
             RealTime();
             TimeOver();
         }
-        //switch (currentState)
-        //{
-        //    case GameState.Win:
-
-        //        break;
-        //    case GameState.Lose:
-                
-        //        break;
-        //}
-
-
     }
 
     public void RealTime()

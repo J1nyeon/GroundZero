@@ -15,33 +15,43 @@ public class InventoryManager : MonoBehaviour
     public GameObject rightSet;
 
 
-    public List<Button> inventoryImgBT = new List<Button>();
+    
 
     public List<GameObject> listInventoryImg = new List<GameObject>();
 
-
-    public void Update()
+    public void Start()
     {
-
+        listInventoryImg[1].SetActive(true);
     }
 
     public void InventorySellect(int ActiveIndexNumber)
     {
+        
         for (int i = 0; i < listInventoryImg.Count; i++)
         {
-            
+            if (i == ActiveIndexNumber)
+            {
+                listInventoryImg[ActiveIndexNumber].SetActive(true);
+                continue;
+            }
+            listInventoryImg[i].SetActive(false);
         }
-
     }
 
 
-public void OnClickInvenBT()
+    public void OnClickInformationBT()
+    {
+        OnClickInven();
+        InventorySellect(0);
+    }
+
+    public void OnClickInvenBT()
     {
         healthCondition.SetActive(false);
         inven.SetActive(true);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
-        listInventoryImg[1].SetActive(true);
+        InventorySellect(1);
     }
     public void OnClickHealthBT()
     {
@@ -49,11 +59,35 @@ public void OnClickInvenBT()
         inven.SetActive(false);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
-        listInventoryImg[2].SetActive(true);
+        InventorySellect(2);
 
     }
 
-    public void OnClickBT()
+    public void OnClickSkillBT()
+    {
+        OnClickInven();
+        InventorySellect(3);
+    }
+
+    public void OnClickMapBT()
+    {
+        OnClickInven();
+        InventorySellect(4);
+    }
+
+    public void OnClickDutyBT()
+    {
+        OnClickInven();
+        InventorySellect(5);
+    }
+    public void OnClickChallengeBT()
+    {
+        OnClickInven();
+        InventorySellect(6);
+    }
+
+
+    public void OnClickInven()
     {
         inven.SetActive(false);
         healthCondition.SetActive(false);
