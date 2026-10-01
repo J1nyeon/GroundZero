@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
 {
+    public InGameUIManager gameUIManager; 
     public float currentHp;
     public float maxHp = 100f;
 
@@ -17,7 +18,7 @@ public class PlayerState : MonoBehaviour
     }
     public void Update()
     {
-        UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
+        gameUIManager.HpUI(hpSlider, currentHp, maxHp);
     }
 
     public void TakeDamage(float damage)
@@ -28,7 +29,7 @@ public class PlayerState : MonoBehaviour
         if (currentHp <= 0)
         {
             currentHp = 0f;
-            UIManager.instance.Lose();
+            gameUIManager.Lose();
         }
         //UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
     }

@@ -11,6 +11,7 @@ public class EnemyFSM : MonoBehaviour
 {
 
     public EnemyData data;
+    public InGameUIManager gameUIManager;
 
     [Header("StateMachine")]
     public BaseState currentState;
@@ -108,7 +109,7 @@ public class EnemyFSM : MonoBehaviour
     }
     public void HPUI()
     {
-        UIManager.instance.HpUI(hpSlider, EnemyHp, data.enemyHp);
+        gameUIManager.HpUI(hpSlider, EnemyHp, data.enemyHp);
     }
     public void ChangeState(BaseState nextState)
     {
@@ -258,6 +259,7 @@ public class EnemyFSM : MonoBehaviour
 
             chaseRange = 30f;
             longRange = 40f;
+            
         }
     }
 

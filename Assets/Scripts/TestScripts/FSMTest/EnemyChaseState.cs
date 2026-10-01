@@ -39,6 +39,8 @@ public class EnemyChaseState : BaseState
         if (fsm.targetDistance > fsm.longRange)
         {
             fsm.ChangeState(fsm.patrolState);
+            fsm.longRange = 15f;
+            fsm.chaseRange = 10f;
         }
         
     }

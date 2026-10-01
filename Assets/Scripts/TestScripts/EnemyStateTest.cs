@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyStateTest : MonoBehaviour
 {
+    public InGameUIManager gameUIManager;
     public EnemyData data;
     public float EnemyHp;
     public Slider hpSlider;
@@ -56,7 +57,7 @@ public class EnemyStateTest : MonoBehaviour
     }
     public void HPUI()
     {
-        UIManager.instance.HpUI(hpSlider, EnemyHp, data.enemyHp);
+        gameUIManager.HpUI(hpSlider, EnemyHp, data.enemyHp);
     }
 
     

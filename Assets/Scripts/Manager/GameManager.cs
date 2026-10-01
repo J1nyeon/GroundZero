@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public InGameUIManager gameUIManager;
     public float time = 300;
     public int hour;
     public int minute;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
     {
         if (second == 0)
         {
-            UIManager.instance.Lose();
+            gameUIManager.Lose();
             //timerText.text = $"{minute: 00} :{00 : 00}";
         }
     }

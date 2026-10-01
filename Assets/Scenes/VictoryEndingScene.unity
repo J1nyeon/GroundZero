@@ -796,6 +796,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 508364197}
   m_CullTransparentMesh: 1
+--- !u!1 &638239912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 638239914}
+  - component: {fileID: 638239913}
+  m_Layer: 0
+  m_Name: VictoryEndingSceneScripts
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &638239913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638239912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6beebb601d776d498933d06a78d3a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstCut: {fileID: 1866339519}
+  secondCut: {fileID: 1909826135}
+  thirdCut: {fileID: 1611687920}
+  tittleScene: TittleScene
+--- !u!4 &638239914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 638239912}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 954.1347, y: 208.39807, z: 9.596017}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &735094512
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,7 +1001,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 826174563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickSecondCutBackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &826174563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1240,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: 0839fb8cff033f34a887793d0feb1207,
       type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 0839fb8cff033f34a887793d0feb1207, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1192,7 +1252,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 866508681}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickTittleSceneLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &866508681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,7 +1932,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1182670007}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickThirdCutBackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1182670007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,7 +2065,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1183339683}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickTittleSceneLoad
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1183339683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2766,7 +2862,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1694332231}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickSecondCutNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1694332231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3047,7 +3155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1866339520
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3402,7 +3510,7 @@ MonoBehaviour:
     m_HighlightedSprite: {fileID: 21300000, guid: fe9722e065a06834498f17f5c152394e,
       type: 3}
     m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: fe9722e065a06834498f17f5c152394e, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -3414,7 +3522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2036439995}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 638239913}
+        m_TargetAssemblyTypeName: VictoryEndingSceneScripts, Assembly-CSharp
+        m_MethodName: OnClickFirstCutNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2036439995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,3 +3619,4 @@ SceneRoots:
   - {fileID: 219910606}
   - {fileID: 220844868}
   - {fileID: 1353755003}
+  - {fileID: 638239914}

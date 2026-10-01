@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
+    public InGameUIManager gameUIManager;
     public bool interaction = false;
     public GameObject exitPoint;
     //public GameObject goInteraction;
@@ -29,6 +30,8 @@ public class PlayerManager : MonoBehaviour
 
     public bool hasTriggeredEnding = false;
 
+
+   
     public void Start()
     {
         countDownTimer = escapeTimer;
@@ -38,8 +41,8 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         //ExitDistanse();
-        
-        UIManager.instance.EscapeTimerUI(countDownTimer);
+
+        gameUIManager.EscapeTimerUI(countDownTimer);
         if (interaction == true)
         {
             //goInteraction.SetActive(true);
@@ -51,7 +54,7 @@ public class PlayerManager : MonoBehaviour
                 if (hasTriggeredEnding == false)
                 {
                     hasTriggeredEnding = true;
-                    UIManager.instance.Win();
+                    gameUIManager.Win();
                 }
             }
         }
