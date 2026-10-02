@@ -16,11 +16,17 @@ public class GameManager : MonoBehaviour
 
     public enum GameState 
     {
-        Win,
+        None = -1,
         Play,
+        Win,
         Lose
     }
-    public GameState currentState;
+    public static GameState currentState;
+
+    private void Awake()
+    {
+        currentState = GameState.Play;
+    }
 
     // Update is called once per frame
     void Update()

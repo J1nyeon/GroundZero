@@ -31,7 +31,7 @@ public class InGameUIManager : MonoBehaviour
     {
         int sec = (int)timer;
         int milsec = (int)((timer % 1) * 100);
-        escapeTimerTxt.text = "hh";// $"{sec:00}:{milsec:00}";
+        escapeTimerTxt.text =  $"{sec:00}:{milsec:00}";
     }
 
     public void Update()
@@ -68,7 +68,8 @@ public class InGameUIManager : MonoBehaviour
         //{
         //    txtUI.text = "You Lose";
         //    txtUI.color = Color.cyan;
-        //    DoGameOverOrWin();
+        GameManager.currentState = GameManager.GameState.Lose;
+        DoGameOverOrWin();
         //}
 
     }

@@ -59,10 +59,10 @@ public class Weapon_ : MonoBehaviour
             else if (hit.collider.CompareTag("Wall"))
             {
                 // √—æÀ »Á¿˚ or ¿Ã∆Â∆Æ
-                GameObject pBH = poolBulletHoles.GetObjectBulletHoles();
-                pBH.transform.position = hit.point;
-                pBH.transform.rotation = Quaternion.LookRotation(Vector3.back);
-                StartCoroutine(CoBulletHoles(pBH));
+                GameObject poolsHoles = poolBulletHoles.GetObjectBulletHoles();
+                poolsHoles.transform.position = hit.point;
+                poolsHoles.transform.rotation = Quaternion.LookRotation(Vector3.back);
+                StartCoroutine(CoBulletHoles(poolsHoles));
                 //Debug.Log("∫Æø° ¥Í¿Ω");
             }
         }

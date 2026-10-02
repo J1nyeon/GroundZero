@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -23,10 +24,11 @@ public class PlayerManager : MonoBehaviour
     public bool countDownCheck = false;
 
     public GameObject inventoryTab;
-    public PlayerCameraController PCC;
-    public WeaponController WC;
+    public PlayerCameraController playerCameraController;
+    public WeaponController weaponController;
 
     public GameObject escImage;
+    public string tittleScene = "TittleScene";
 
     public bool hasTriggeredEnding = false;
 
@@ -41,7 +43,7 @@ public class PlayerManager : MonoBehaviour
     private void Update()
     {
         //ExitDistanse();
-
+        
         gameUIManager.EscapeTimerUI(countDownTimer);
         if (interaction == true)
         {
@@ -54,6 +56,7 @@ public class PlayerManager : MonoBehaviour
                 if (hasTriggeredEnding == false)
                 {
                     hasTriggeredEnding = true;
+                    GameManager.currentState = GameManager.GameState.Win;
                     gameUIManager.Win();
                 }
             }
@@ -112,8 +115,8 @@ public class PlayerManager : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.None;
         }
-        PCC.enabled = isLock;
-        WC.enabled = isLock;
+        playerCameraController.enabled = isLock;
+        weaponController.enabled = isLock;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -144,6 +147,17 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
-    
+    public void OnClickGameProgress()
+    {
+        escImage.SetActive(false);
+        CursorLockChange(true);
+    }
+
+    public void OnClickTittleSceneLoder()
+    {
+        SceneManager.LoadScene(tittleScene);
+    }
+
+
 
 }

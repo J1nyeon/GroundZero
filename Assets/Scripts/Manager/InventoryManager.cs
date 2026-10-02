@@ -8,7 +8,17 @@ using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-   
+   public enum E_Inventroy_Tab
+    {
+        None= -1,
+        Information = 0,
+        Inven,
+        Health,
+        Skill,
+        Map,
+        Duty,
+        Challenge
+    }
     public GameObject inven;
     public GameObject healthCondition;
     public GameObject leftSet;
@@ -21,17 +31,17 @@ public class InventoryManager : MonoBehaviour
 
     public void Start()
     {
-        listInventoryImg[1].SetActive(true);
+        listInventoryImg[(int)E_Inventroy_Tab.Inven].SetActive(true);
     }
 
-    public void InventorySellect(int ActiveIndexNumber)
+    public void InventorySellect(E_Inventroy_Tab ActiveIndexNumber)
     {
         
         for (int i = 0; i < listInventoryImg.Count; i++)
         {
-            if (i == ActiveIndexNumber)
+            if (i == (int)ActiveIndexNumber)
             {
-                listInventoryImg[ActiveIndexNumber].SetActive(true);
+                listInventoryImg[i].SetActive(true);
                 continue;
             }
             listInventoryImg[i].SetActive(false);
@@ -42,7 +52,7 @@ public class InventoryManager : MonoBehaviour
     public void OnClickInformationBT()
     {
         OnClickInven();
-        InventorySellect(0);
+        InventorySellect(E_Inventroy_Tab.Information);
     }
 
     public void OnClickInvenBT()
@@ -51,7 +61,7 @@ public class InventoryManager : MonoBehaviour
         inven.SetActive(true);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
-        InventorySellect(1);
+        InventorySellect(E_Inventroy_Tab.Inven);
     }
     public void OnClickHealthBT()
     {
@@ -59,31 +69,31 @@ public class InventoryManager : MonoBehaviour
         inven.SetActive(false);
         rightSet.SetActive(true);
         leftSet.SetActive(true);
-        InventorySellect(2);
+        InventorySellect(E_Inventroy_Tab.Health);
 
     }
 
     public void OnClickSkillBT()
     {
         OnClickInven();
-        InventorySellect(3);
+        InventorySellect(E_Inventroy_Tab.Skill);
     }
 
     public void OnClickMapBT()
     {
         OnClickInven();
-        InventorySellect(4);
+        InventorySellect(E_Inventroy_Tab.Map);
     }
 
     public void OnClickDutyBT()
     {
         OnClickInven();
-        InventorySellect(5);
+        InventorySellect(E_Inventroy_Tab.Duty);
     }
     public void OnClickChallengeBT()
     {
         OnClickInven();
-        InventorySellect(6);
+        InventorySellect(E_Inventroy_Tab.Challenge);
     }
 
 

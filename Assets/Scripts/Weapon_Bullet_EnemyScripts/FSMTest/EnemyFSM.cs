@@ -38,6 +38,8 @@ public class EnemyFSM : MonoBehaviour
     public float longRange = 15f;
     public float detectRange = 12f;
     public float targetDistance;
+    public float underAttackChaseRange = 30f;
+    public float underAttackLongRange = 40f;
 
     [Header("Patrol")]
     public Transform[] patrolWaypoint;
@@ -129,7 +131,6 @@ public class EnemyFSM : MonoBehaviour
         if (currentState == null) return;
         TargetDistance();
         currentState.Do();
-        Debug.Log($"현재 상태 : {currentState}");
         StateAngle();
         
     }

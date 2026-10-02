@@ -4806,7 +4806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -4824,9 +4824,9 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: ad76769372ff1ac46ad84c9c359c3c45,
       type: 3}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 21300000, guid: f42a0643c503ddf49b680168204becdc, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: f42a0643c503ddf49b680168204becdc, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: f42a0643c503ddf49b680168204becdc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4838,8 +4838,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1828870842}
-        m_TargetAssemblyTypeName: ESCButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 2617254341240031171}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: OnClickGameProgress
         m_Mode: 1
         m_Arguments:
@@ -5619,7 +5619,7 @@ GameObject:
   - component: {fileID: 752857925}
   - component: {fileID: 752857924}
   m_Layer: 5
-  m_Name: Image
+  m_Name: EscapeImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7920,7 +7920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -7952,8 +7952,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1828870842}
-        m_TargetAssemblyTypeName: ESCButtonManager, Assembly-CSharp
+      - m_Target: {fileID: 2617254341240031171}
+        m_TargetAssemblyTypeName: PlayerManager, Assembly-CSharp
         m_MethodName: OnClickTittleSceneLoder
         m_Mode: 1
         m_Arguments:
@@ -15001,7 +15001,7 @@ GameObject:
   - component: {fileID: 1807606128}
   - component: {fileID: 1807606127}
   m_Layer: 5
-  m_Name: escapeImage
+  m_Name: escapeInventoryTimerImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15242,7 +15242,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1828870842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16874,6 +16874,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6eae558abd67624abeb172b456141f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2617254341240031171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 843487689031346605, guid: 6dbdc3443cdb84b41bcaffa9f7f235c6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8077199143275421609}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35419b718c6dbdd47ba83a5ee412df82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4013636378051416920
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17072,6 +17084,16 @@ PrefabInstance:
       propertyPath: txtInteraction
       value: 
       objectReference: {fileID: 423864149}
+    - target: {fileID: 843487689031346605, guid: 6dbdc3443cdb84b41bcaffa9f7f235c6,
+        type: 3}
+      propertyPath: weaponController
+      value: 
+      objectReference: {fileID: 2617254341240031168}
+    - target: {fileID: 843487689031346605, guid: 6dbdc3443cdb84b41bcaffa9f7f235c6,
+        type: 3}
+      propertyPath: playerCameraController
+      value: 
+      objectReference: {fileID: 2617254341240031165}
     - target: {fileID: 3736236524815531671, guid: 6dbdc3443cdb84b41bcaffa9f7f235c6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17247,6 +17269,6 @@ SceneRoots:
   - {fileID: 1743536425}
   - {fileID: 2126992775}
   - {fileID: 17296079}
+  - {fileID: 1890420616}
   - {fileID: 1828870843}
   - {fileID: 2048698740}
-  - {fileID: 1890420616}
