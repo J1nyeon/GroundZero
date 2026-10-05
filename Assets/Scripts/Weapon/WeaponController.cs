@@ -15,7 +15,6 @@ public class WeaponController : MonoBehaviour
     public Animator animator;
     public bool isZoom = false;
 
-
     public void Update()
     {
         if (Input.GetKey(KeyCode.Mouse0) && player.canShoot == true) 

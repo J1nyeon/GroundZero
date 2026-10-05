@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
     public float moveSpeed = 5f;
     public float sprintSpeed = 10f;
     public float applySpeed;
+    public bool isMove = false;
     public Animator animator;
 
     private float xInput;
@@ -27,6 +28,10 @@ public class PlayerMove : MonoBehaviour
     public bool canShoot = true;
     public GameObject characterUI;
 
+    //public AudioClip currentMove;
+    public AudioClip[] moveCurrent;
+    
+
     void Start()
     {
         applySpeed = moveSpeed;
@@ -36,7 +41,8 @@ public class PlayerMove : MonoBehaviour
         Vector3 dirMove = (transform.right * xInput + transform.forward * zInput).normalized;
         dirMove *= applySpeed;
         rb.velocity = new Vector3(dirMove.x, rb.velocity.y, dirMove.z);
-   
+        
+        
     }
     public void Jump()
     {
@@ -51,10 +57,10 @@ public class PlayerMove : MonoBehaviour
         xInput = Input.GetAxisRaw("Horizontal");
         zInput = Input.GetAxisRaw("Vertical");
 
-
         bool isMove = rb.velocity.magnitude > 1f;
 
         characterUI.SetActive(isMove);
+        AudioClip clip = moveCurrent[Random.Range(0, moveCurrent.Length)];
 
         if (Input.GetKey(KeyCode.LeftShift))
         {
@@ -68,6 +74,19 @@ public class PlayerMove : MonoBehaviour
         {
             isJumping = true;
         }
+        
+        if (isMove == true && isGrounded == true)
+        {
+            if (SFXManager.instance.sfxSource.isPlaying == false)
+            {
+                SFXManager.instance.PlaySFX(clip);
+            }
+            
+        }
+        //else if (applySpeed == sprintSpeed && isMove == true && isGrounded == true)
+        //{
+        //    SFXManager.instance.PlaySFX(clip);
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)

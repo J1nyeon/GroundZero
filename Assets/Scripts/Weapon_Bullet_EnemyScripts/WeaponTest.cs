@@ -30,6 +30,8 @@ public class WeaponTest : MonoBehaviour
     public float takeWeaponAniTime = 1.2f;
     public LayerMask layer;
 
+    public AudioSource shootSource;
+    public AudioClip clipFireSFX;
     public void Awake()
     {
         if (data != null)
@@ -51,7 +53,8 @@ public class WeaponTest : MonoBehaviour
             Shoot();
             //MuzzleEffect();
             MuzzlePaticle();
-
+            //SFXManager.instance.PlaySFX(clipFireSFX);
+            shootSource.PlayOneShot(clipFireSFX);
             nextFireTime = Time.time + data.fireRate;
         }
         

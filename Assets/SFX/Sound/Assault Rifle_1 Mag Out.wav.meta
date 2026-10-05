@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df74138c13da8d048a61f196b068343d
+guid: 7db064ef027914d4588170619f395457
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -25,5 +25,6 @@ AssetOrigin:
   productId: 290322
   packageName: FPS Framework Pro 2.0
   packageVersion: 2.2.5
-  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/land 1.wav
+  assetPath: Assets/Akila/FPS Framework/Art/Audio/Weapons/Assult Rifle_1/Assault
+    Rifle_1 Mag Out.wav
   uploadId: 941284

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32b45f6fea824a949b88419d7b79fbad
+guid: 4b9378c4d1804294e8c721cc07b89845
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -25,5 +25,5 @@ AssetOrigin:
   productId: 290322
   packageName: FPS Framework Pro 2.0
   packageVersion: 2.2.5
-  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/step sand 1.wav
+  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/land 2.wav
   uploadId: 941284

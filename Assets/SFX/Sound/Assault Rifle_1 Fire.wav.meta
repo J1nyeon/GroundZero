@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f5b1e55d06d7cdd45ae5ff04e3842c27
+guid: d72df022f97ea744c9b3857074a1bb6b
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -25,5 +25,6 @@ AssetOrigin:
   productId: 290322
   packageName: FPS Framework Pro 2.0
   packageVersion: 2.2.5
-  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/step wood 1.wav
+  assetPath: Assets/Akila/FPS Framework/Art/Audio/Weapons/Assult Rifle_1/Assault
+    Rifle_1 Fire.wav
   uploadId: 941284

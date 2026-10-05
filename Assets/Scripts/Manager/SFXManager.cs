@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class SFXManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip clip;
+    public static SFXManager instance;
 
-    // Start is called before the first frame update
-    void Start()
+    public AudioSource sfxSource;
+    public List<AudioSource> audioSFX;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaySFX(AudioClip clip)
     {
-        
-    }
-    public void WalkSound()
-    {
-
+        sfxSource.PlayOneShot(clip);
     }
 }

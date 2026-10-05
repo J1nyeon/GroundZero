@@ -70,6 +70,9 @@ public class EnemyFSM : MonoBehaviour
     public ParticleSystem bloodEffect;
     public ParticleSystem bloodEffect2;
 
+    public AudioSource audioSource;
+    public AudioClip shootClipSFX;
+
     public void Start()
     {
         vecRotation = patrolRotation.localEulerAngles;
@@ -169,6 +172,8 @@ public class EnemyFSM : MonoBehaviour
         if (timer > 0.5f)
         {
             timer = 0f;
+
+            audioSource.PlayOneShot(shootClipSFX);
             BulletSpawn();
         }
     }

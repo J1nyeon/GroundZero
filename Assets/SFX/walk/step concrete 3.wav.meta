@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df74138c13da8d048a61f196b068343d
+guid: e6594a067844c5f4199b62ff93385f6c
 AudioImporter:
   externalObjects: {}
   serializedVersion: 6
@@ -25,5 +25,6 @@ AssetOrigin:
   productId: 290322
   packageName: FPS Framework Pro 2.0
   packageVersion: 2.2.5
-  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/land 1.wav
+  assetPath: Assets/Akila/FPS Framework/Art/Audio/Player/Foot Effects/step concrete
+    3.wav
   uploadId: 941284
