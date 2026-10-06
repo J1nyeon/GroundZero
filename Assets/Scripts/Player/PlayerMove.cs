@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
+
+    public SFXManager sfxManager;
     public Rigidbody rb;
     [Header("Move")]
     public float moveSpeed = 5f;
@@ -76,9 +78,9 @@ public class PlayerMove : MonoBehaviour
         
         if (isMove == true && isGrounded == true)
         {
-            if (SFXManager.instance.sfxSource.isPlaying == false)
+            if (sfxManager.sfxSource.isPlaying == false)
             {
-                SFXManager.instance.PlaySFX(clip);
+                sfxManager.PlaySFX(clip);
             }
             
         }
@@ -90,7 +92,7 @@ public class PlayerMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Grounded"))
+        if (collision.gameObject.CompareTag("Grounded") || collision.gameObject.CompareTag("MapObject"))
         {
             isGrounded = true;
             canShoot = true;

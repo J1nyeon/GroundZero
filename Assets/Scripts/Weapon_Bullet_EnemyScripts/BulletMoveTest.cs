@@ -67,7 +67,7 @@ public class BulletMoveTest : MonoBehaviour
         if (other.gameObject.CompareTag("Player")) return;
 
 
-        if (other.gameObject.CompareTag("Wall"))
+        if (other.gameObject.CompareTag("Wall") || other.gameObject.CompareTag("MapObject"))
         {
             GameObject bulletHoles = PoolingBulletHoles.instance.GetObjectBulletHoles();
             bulletHoles.transform.position = hitPointVecPos;

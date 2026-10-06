@@ -49,9 +49,10 @@ public class GameManager : MonoBehaviour
 
     public void TimeOver()
     {
-        if (second == 0)
+        if (second == 0 && minute == 0)
         {
             gameUIManager.Lose();
+            Debug.Log("타임아웃 패배");
             //timerText.text = $"{minute: 00} :{00 : 00}";
         }
     }
