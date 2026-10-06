@@ -76,7 +76,7 @@ public class EnemyFSM : MonoBehaviour
     public void Start()
     {
         vecRotation = patrolRotation.localEulerAngles;
-        Debug.Log($"d ? : {vecRotation}");
+        //Debug.Log($"d ? : {vecRotation}");
         idleState = new EnemyIdleState(this);
         chaseState = new EnemyChaseState(this);
         attackState = new EnemyAttackState(this);
@@ -103,12 +103,12 @@ public class EnemyFSM : MonoBehaviour
         EnemyHp -= damage;
         EnemyHp = Mathf.Clamp(EnemyHp, 0, data.enemyHp);
 
-        Debug.Log("현재 HP : " + EnemyHp);
+        //Debug.Log("현재 HP : " + EnemyHp);
         if (0 >= EnemyHp)
         {
             EnemyHp = 0f;
             isDead = true; 
-            Debug.Log("적 처치");
+            //Debug.Log("적 처치");
         }
         //HPUI();
     }
@@ -207,7 +207,7 @@ public class EnemyFSM : MonoBehaviour
 
         if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 100f, layer) == true)
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
             if (hit.collider.CompareTag("Player"))
             {
                 isBlocked = false;

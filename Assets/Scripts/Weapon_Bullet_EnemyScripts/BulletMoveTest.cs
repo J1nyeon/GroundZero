@@ -47,7 +47,7 @@ public class BulletMoveTest : MonoBehaviour
         float dis = Vector3.Distance(startPosition, transform.position);
         if (dis >= maxDistance)
         {
-            Debug.Log("최대거리에서 벗어남");
+            //Debug.Log("최대거리에서 벗어남");
             gameObject.SetActive(false);
         }
         BulletRaycast();
@@ -82,7 +82,7 @@ public class BulletMoveTest : MonoBehaviour
         {
             EnemyFSM enemyFSM = other.gameObject.GetComponent<EnemyFSM>();
             enemyFSM.TakeDamage(data.currentShotDamage);
-            Debug.Log("적과 충돌");
+            //Debug.Log("적과 충돌");
             
             //canMove = false;
             gameObject.SetActive(false);

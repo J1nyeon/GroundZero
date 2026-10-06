@@ -46,10 +46,7 @@ public class PlayerCameraController : MonoBehaviour
         float horizontalRecoil = Random.Range(-horizontalAmount, horizontalAmount);
         yRotate += horizontalRecoil;
     }
-    public void Zoom()
-    {
-        
-    }
+    
 
 
     //public void MouseOnOff()

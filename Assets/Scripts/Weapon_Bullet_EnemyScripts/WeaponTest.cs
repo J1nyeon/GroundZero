@@ -63,7 +63,7 @@ public class WeaponTest : MonoBehaviour
     {
         if (canShoot == false) return;
         bullet--;
-        Debug.Log($"남은 탄약 개수 : {bullet}");
+        //Debug.Log($"남은 탄약 개수 : {bullet}");
         Vector3 targetPoint;
         
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out RaycastHit hit, maxDistance, layer))
@@ -80,12 +80,12 @@ public class WeaponTest : MonoBehaviour
                 // 벽을 감지하고 여기서 맞은곳의 좌표를 저장
                 //TargetPoint(targetPoint);
             }
-            Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);
+            //Debug.Log("카메라 레이에 충돌한 타겟 : " + hit.collider.gameObject.name);
         }
         else 
         {
             targetPoint =  cam.transform.position + cam.transform.forward * maxDistance;
-            Debug.Log("카메라 레이에 충돌한 것 없음 ");
+            //Debug.Log("카메라 레이에 충돌한 것 없음 ");
         }
         GameObject po = pool.GetBullet();
         
@@ -117,7 +117,7 @@ public class WeaponTest : MonoBehaviour
         canShoot = false;
         animator.SetBool("Is Reloading", true);
 
-        Debug.Log("장전중 .. ");
+        //Debug.Log("장전중 .. ");
 
         yield return new WaitForSeconds(data.reloadTime);
 
@@ -125,7 +125,7 @@ public class WeaponTest : MonoBehaviour
         animator.SetBool("Is Reloading", false);
         reloadCheck = false;
         canShoot = true;
-        Debug.Log("장전 완료");
+        //Debug.Log("장전 완료");
     }
 
     private IEnumerator CoWeaponStartAnim()
