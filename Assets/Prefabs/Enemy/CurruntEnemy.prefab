@@ -9740,13 +9740,17 @@ MonoBehaviour:
   moveSpeed: 3
   distance: 3
   targetPlayer: {fileID: 0}
-  chaseRange: 9
-  attackRange: 10
-  longRange: 13
+  chaseRange: 13
+  attackRange: 15
+  longRange: 20
   detectRange: 10
   targetDistance: 0
+  currentAttackRange: 0
+  currentLongRange: 0
+  currentChaseRange: 0
   underAttackChaseRange: 30
   underAttackLongRange: 40
+  underAttackRange: 20
   patrolWaypoint:
   - {fileID: 3047281467829776807}
   - {fileID: 397363682513941495}

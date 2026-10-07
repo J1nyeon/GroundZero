@@ -92,6 +92,7 @@ public class PlayerManager : MonoBehaviour
     {
         //State.SetActive(!State.activeSelf);
         //CursorLockChange(State.activeSelf);
+        // 아래 코드
         if (State.activeSelf == true)
         {
             State.SetActive(false);
@@ -104,6 +105,8 @@ public class PlayerManager : MonoBehaviour
         }
     }
 
+
+    
     public void CursorLockChange(bool isLock)
     {
         Cursor.visible = !isLock;

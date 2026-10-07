@@ -38,8 +38,12 @@ public class EnemyFSM : MonoBehaviour
     public float longRange = 15f;
     public float detectRange = 12f;
     public float targetDistance;
+    public float currentAttackRange;
+    public float currentLongRange;
+    public float currentChaseRange;
     public float underAttackChaseRange = 30f;
     public float underAttackLongRange = 40f;
+    public float underAttackRange = 20f;
 
     [Header("Patrol")]
     public Transform[] patrolWaypoint;
@@ -91,6 +95,9 @@ public class EnemyFSM : MonoBehaviour
         {
             EnemyHp = data.enemyHp;
         }
+        currentAttackRange = attackRange;
+        currentLongRange = longRange;
+        currentChaseRange = chaseRange;
     }
 
     public void BloodEF()
@@ -263,8 +270,9 @@ public class EnemyFSM : MonoBehaviour
 
             BloodEF();
 
-            chaseRange = 30f;
-            longRange = 40f;
+            chaseRange = underAttackChaseRange;
+            longRange = underAttackLongRange;
+            attackRange = underAttackRange;
             
         }
     }
