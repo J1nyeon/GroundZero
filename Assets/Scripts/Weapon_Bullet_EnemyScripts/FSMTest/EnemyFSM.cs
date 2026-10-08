@@ -180,6 +180,10 @@ public class EnemyFSM : MonoBehaviour
         {
             timer = 0f;
 
+            //SFXManager.instance.PlaySFX(audioSource, shootClipSFX); // 오디오소스를 객체별로 가지고 있을 경우
+            //SFXManager.instance.PlaySFX(transform, shootClipSFX); 
+            // 오디오소스를 풀링했을 경우
+            // transform을 활용하여 플레이어의 위치에서 들리게하기 위함
             audioSource.PlayOneShot(shootClipSFX);
             BulletSpawn();
         }

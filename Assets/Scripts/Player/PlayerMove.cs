@@ -29,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     public bool canShoot = true;
     public GameObject characterUI;
 
+    public AudioSource source;
     //public AudioClip currentMove;
     public AudioClip[] moveCurrent;
     
@@ -80,9 +81,9 @@ public class PlayerMove : MonoBehaviour
         {
             if (sfxManager.sfxSource.isPlaying == false)
             {
+                //SFXManager.instance.PlayOneSFX(source, clip);
                 sfxManager.PlaySFX(clip);
             }
-            
         }
         //else if (applySpeed == sprintSpeed && isMove == true && isGrounded == true)
         //{

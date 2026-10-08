@@ -14,7 +14,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject exitPoint;
     //public GameObject goInteraction;
     //public Image interactionUI;
-    public TextMeshProUGUI txtInteraction;
+    //public TextMeshProUGUI txtInteraction;
 
     //public bool escapeUICheck = false;
     [Header("EscapeCountDown")]
