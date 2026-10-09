@@ -28,9 +28,15 @@ public class EnemyChaseState : BaseState
         }
         // 공격 범위 내에 들어오고 플레이어 이외의 물체에 막혀있지 않다면 Attack 상태로 전환
         // 체이스상태 
+        ////Debug.Log("거리: " + fsm.targetDistance +
+        //          " / 공격거리: " + fsm.attackRange +
+        //          " / isBlocked: " + fsm.isBlocked);
+
         if (fsm.targetDistance < fsm.attackRange && fsm.isBlocked == false)
         {
+            //Debug.Log("공격 상태 전환 조건 통과");
             fsm.ChangeState(fsm.attackState);
+            //Debug.Log("현재 상태 :" + fsm.currentState);
         }
         // TODO
         // 일정 거리내에서 벗어나면 patrol 상태로 

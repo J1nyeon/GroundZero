@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 4165f506da20caa4b8ccf3d9740cca53, type: 2}
-  bulletSpeed: 20
+  bulletSpeed: 40
   startPosition: {x: 0, y: 0, z: 0}
   maxDistance: 100
   canMove: 0

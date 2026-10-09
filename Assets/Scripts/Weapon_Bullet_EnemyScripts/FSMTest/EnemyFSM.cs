@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -207,15 +206,7 @@ public class EnemyFSM : MonoBehaviour
         bullet.transform.rotation = firePoint.rotation;
         bullet.SetActive(true);
     }
-    //public void MoveSound()
-    //{
-    //    AudioClip clip = listMoveClipSFX[Random.Range(0, listMoveClipSFX.Count)];
-        
-    //    if (enemyMoveSource.isPlaying == false)
-    //    {
-    //        soundManager.PlayOneSFX(enemyMoveSource, clip);
-    //    }
-    //}
+   
 
     public void TargetDistance()
     {
@@ -224,13 +215,21 @@ public class EnemyFSM : MonoBehaviour
 
     public void TargetRaycast()
     {
-        Vector3 dir = (targetPlayer.transform.position - transform.position).normalized;
+        if(targetPlayer == null)
+        {
+            //Debug.LogWarning("타겟 플레이어가 없음");
+            return;
+        }
+        Vector3 dir = (targetPlayer.position - transform.position).normalized;
 
         Debug.DrawRay(transform.position, dir * 100f, Color.magenta);
 
         if (Physics.Raycast(transform.position, dir, out RaycastHit hit, 100f, layer) == true)
         {
             //Debug.Log(hit.collider.name);
+            //Debug.Log("감지 오브젝트: " + hit.collider.name);
+            //Debug.Log("감지 오브젝트 Tag: " + hit.collider.tag);
+
             if (hit.collider.CompareTag("Player"))
             {
                 isBlocked = false;
@@ -239,7 +238,13 @@ public class EnemyFSM : MonoBehaviour
             {
                 isBlocked = true;
             }
+            //Debug.Log("최종 isBlocked:" + isBlocked);
         }
+        //else
+        //{
+        //    Debug.Log("레이케스트가 아무것도 감지하지 못함");
+        //}
+        
     }
 
     public IEnumerator CoEnemyDead()
