@@ -56,7 +56,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.28024194
+        functionName: MoveSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 3b8ab5bba0d44544b8f9dc9cd8289f44,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.82661295
+        functionName: MoveSound
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 3b8ab5bba0d44544b8f9dc9cd8289f44,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}

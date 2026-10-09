@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 77e4a975157e78e449c5b6a5e5fa17f4
+guid: 1b1da4531d615ed448c27f159c5549a5
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -44,7 +44,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -57,19 +57,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.380279
-        functionName: MoveSound
+      - time: 0
+        functionName: NewEvent
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 3b8ab5bba0d44544b8f9dc9cd8289f44,
-          type: 3}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      - time: 0.80671847
-        functionName: MoveSound
-        data: 
-        objectReferenceParameter: {fileID: 11500000, guid: 3b8ab5bba0d44544b8f9dc9cd8289f44,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0

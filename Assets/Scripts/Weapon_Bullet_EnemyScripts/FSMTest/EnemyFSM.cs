@@ -12,6 +12,7 @@ public class EnemyFSM : MonoBehaviour
 
     public EnemyData data;
     public InGameUIManager gameUIManager;
+    public InGameSoundManager soundManager;
 
     [Header("StateMachine")]
     public BaseState currentState;
@@ -74,8 +75,10 @@ public class EnemyFSM : MonoBehaviour
     public ParticleSystem bloodEffect;
     public ParticleSystem bloodEffect2;
 
-    public AudioSource audioSource;
+    public AudioSource enemyShootSource;
+    //public AudioSource enemyMoveSource;
     public AudioClip shootClipSFX;
+    //public List<AudioClip> listMoveClipSFX;
 
     public void Start()
     {
@@ -114,7 +117,7 @@ public class EnemyFSM : MonoBehaviour
         if (0 >= EnemyHp)
         {
             EnemyHp = 0f;
-            isDead = true; 
+            isDead = true;
             //Debug.Log("적 처치");
         }
         //HPUI();
@@ -126,7 +129,7 @@ public class EnemyFSM : MonoBehaviour
     public void ChangeState(BaseState nextState)
     {
         if (nextState == null) return;
-        
+
         if (currentState != null)
         {
             currentState.Exit();
@@ -142,7 +145,7 @@ public class EnemyFSM : MonoBehaviour
         TargetDistance();
         currentState.Do();
         StateAngle();
-        
+
     }
 
     public void Chase()
@@ -179,22 +182,22 @@ public class EnemyFSM : MonoBehaviour
         if (timer > 0.5f)
         {
             timer = 0f;
-
+            //Debug.Log("실행되는지 ?");
             //SFXManager.instance.PlaySFX(audioSource, shootClipSFX); // 오디오소스를 객체별로 가지고 있을 경우
             //SFXManager.instance.PlaySFX(transform, shootClipSFX); 
             // 오디오소스를 풀링했을 경우
             // transform을 활용하여 플레이어의 위치에서 들리게하기 위함
-            audioSource.PlayOneShot(shootClipSFX);
+            soundManager.PlayOneSFX(enemyShootSource, shootClipSFX);
             BulletSpawn();
         }
     }
     public void Patrol()
     {
-        if(agent.pathPending == false && agent.remainingDistance < 0.2f)
+        if (agent.pathPending == false && agent.remainingDistance < 0.2f)
         {
             index = (index + 1) % patrolWaypoint.Length;
             agent.SetDestination(patrolWaypoint[index].position);
-        }   
+        }
     }
     public void BulletSpawn()
     {
@@ -204,6 +207,15 @@ public class EnemyFSM : MonoBehaviour
         bullet.transform.rotation = firePoint.rotation;
         bullet.SetActive(true);
     }
+    //public void MoveSound()
+    //{
+    //    AudioClip clip = listMoveClipSFX[Random.Range(0, listMoveClipSFX.Count)];
+        
+    //    if (enemyMoveSource.isPlaying == false)
+    //    {
+    //        soundManager.PlayOneSFX(enemyMoveSource, clip);
+    //    }
+    //}
 
     public void TargetDistance()
     {

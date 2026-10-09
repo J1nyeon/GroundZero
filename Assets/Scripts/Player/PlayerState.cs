@@ -30,7 +30,7 @@ public class PlayerState : MonoBehaviour
         {
             currentHp = 0f;
             gameUIManager.Lose();
-            Debug.Log("체력 0 패배");
+            //Debug.Log("체력 0 패배");
         }
         //UIManager.instance.HpUI(hpSlider, currentHp, maxHp);
     }

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour
 {
-
-    public SFXManager sfxManager;
+    public InGameSoundManager soundManager;
+    
     public Rigidbody rb;
     [Header("Move")]
     public float moveSpeed = 5f;
@@ -79,10 +79,10 @@ public class PlayerMove : MonoBehaviour
         
         if (isMove == true && isGrounded == true)
         {
-            if (sfxManager.sfxSource.isPlaying == false)
+            if (source.isPlaying == false)
             {
                 //SFXManager.instance.PlayOneSFX(source, clip);
-                sfxManager.PlaySFX(clip);
+                soundManager.PlayOneSFX(source, clip);
             }
         }
         //else if (applySpeed == sprintSpeed && isMove == true && isGrounded == true)

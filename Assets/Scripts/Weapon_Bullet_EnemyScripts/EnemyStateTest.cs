@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -61,11 +61,11 @@ public class EnemyStateTest : MonoBehaviour
     }
 
     
-    public void OnDrawGizmos()
-    {
-        Handles.DrawSolidArc(transform.position,Vector3.up,transform.forward, viewAngle/2f, radius);
-        Handles.DrawSolidArc(transform.position, Vector3.up, transform.forward, -viewAngle / 2f, radius);
+    //public void OnDrawGizmos()
+    //{
+    //    Handles.DrawSolidArc(transform.position,Vector3.up,transform.forward, viewAngle/2f, radius);
+    //    Handles.DrawSolidArc(transform.position, Vector3.up, transform.forward, -viewAngle / 2f, radius);
 
-    }
+    //}
 
 }
